@@ -3,6 +3,10 @@
 YOLO image classification pipeline: split a dataset, train a classifier, run
 predictions.
 
+Full documentation is in [docs/](docs/README.md): a getting-started
+[tutorial](docs/tutorials/first-training-run.md), how-to guides, command line
+and configuration reference, and a discussion of the dataset splitting design.
+
 ## Install
 
 Requires Python 3.12+ and [Poetry](https://python-poetry.org/).
@@ -44,9 +48,9 @@ poetry run train --device mps
 poetry run predict --device mps
 ```
 
-`mps` is [Metal Performance Shaders](https://developer.apple.com/metal/pytorch/) —
-Apple's GPU compute framework, PyTorch's backend for Apple Silicon GPUs
-(the CUDA equivalent for Macs).
+`mps` is [Metal Performance Shaders](https://developer.apple.com/metal/pytorch/),
+Apple's GPU compute framework. PyTorch uses it as the backend for Apple
+Silicon GPUs, in the role CUDA serves for NVIDIA GPUs.
 
 Other accepted values: `--device 0` (first NVIDIA GPU), `--device cpu`.
 Don't commit `device:` into `configs/train_default.yaml` — the right value
