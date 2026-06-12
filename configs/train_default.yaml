@@ -1,0 +1,73 @@
+# Training configuration for `poetry run train`.
+#
+# Precedence: CLI flags > this file > ultralytics defaults.
+# Full reference (all tasks): .venv/Lib/site-packages/ultralytics/cfg/default.yaml
+# or https://docs.ultralytics.com/usage/cfg/
+# Each run records its effective settings in runs/.../args.yaml.
+#
+# Commented values below are the ultralytics defaults; uncomment to change.
+# Detect/segment/pose-only settings (box, dfl, mosaic, ...) are omitted —
+# they have no effect on classification.
+
+# Core ------------------------------------------------------------------------
+
+# Pre-split dataset (train/val/test subdirectories). Pointing at an unsplit
+# directory makes ultralytics re-split it on every run.
+data: data/classification_test_split
+
+epochs: 100
+# time:              # (float) max hours to train; overrides epochs if set
+# patience: 100      # early stop after N epochs without val improvement
+imgsz: 640           # train image size (square); see also scale below
+batch: 16            # images per gradient step; -1 or 0.0-1.0 float = AutoBatch
+
+# Each dataloader worker is a full python process on Windows; high values can
+# exhaust system memory and surface as a misleading CUDA out-of-memory error.
+workers: 2
+
+# Run output directory (relative to cwd).
+project: runs
+# name:              # experiment name; results land in project/name
+# exist_ok: False    # overwrite existing project/name instead of suffixing
+# device:            # 0 for first GPU, 'cpu', etc.; auto-detects by default
+# seed: 0            # random seed for reproducibility
+# resume: False      # resume training from last checkpoint in the run dir
+# fraction: 1.0      # fraction of training dataset to use
+# cache: False       # cache images in RAM (True) or on 'disk' to speed loading
+# save_period: -1    # also save a checkpoint every N epochs; <1 disables
+# plots: True        # save plots/images (confusion matrix, train batches, ...)
+# val: True          # run validation each epoch during training
+
+# Model -----------------------------------------------------------------------
+
+# dropout: 0.0       # dropout for the classification head; try 0.1-0.3 vs overfit
+# freeze:            # freeze first N backbone layers (int); useful for small data
+# amp: True          # mixed-precision training; faster, less GPU memory
+
+# Optimizer / learning rate ---------------------------------------------------
+
+# optimizer: auto    # SGD, Adam, AdamW, ... ; auto picks based on setup
+# lr0: 0.01          # initial learning rate (SGD=1e-2, Adam/AdamW=1e-3)
+# lrf: 0.01          # final LR fraction; final LR = lr0 * lrf
+# momentum: 0.937    # SGD momentum / Adam beta1
+# weight_decay: 0.0005  # L2 regularization
+# warmup_epochs: 3.0 # LR warmup duration (fractions allowed)
+# cos_lr: False      # cosine LR schedule instead of linear
+
+# Augmentation (train-time only) ----------------------------------------------
+
+# auto_augment: randaugment  # policy: randaugment, autoaugment, augmix
+# erasing: 0.4       # probability of blanking a random region (the black boxes)
+# fliplr: 0.5        # horizontal flip probability
+# flipud: 0.0        # vertical flip probability
+# scale: 0.5         # random resize/crop gain
+# degrees: 0.0       # random rotation (+/- degrees)
+# translate: 0.1     # random translation fraction
+# shear: 0.0         # shear degrees
+# perspective: 0.0   # perspective warp (0-0.001 typical)
+# hsv_h: 0.015       # hue jitter
+# hsv_s: 0.7         # saturation jitter
+# hsv_v: 0.4         # brightness jitter
+# bgr: 0.0           # RGB<->BGR channel swap probability
+# mixup: 0.0         # blend two images + labels; regularizer for small datasets
+# cutmix: 0.0        # paste a patch of one image onto another; same idea

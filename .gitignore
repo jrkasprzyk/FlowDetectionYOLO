@@ -1,0 +1,35 @@
+# Project specific
+data/
+runs/
+
+# PyTorch model files
+*.pt
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.pytest_cache/
+htmlcov/
+
+# Environments
+.env
+.venv
+venv/
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+
+# Editor
+# .vscode/
+# .idea/
