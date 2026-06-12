@@ -31,7 +31,7 @@ Trains a YOLO classification model. Settings precedence: command line flags, the
 | `--device` | string | auto | Compute device: a GPU index such as `0`, `cpu`, or `mps`. Automatic selection prefers CUDA and never selects MPS. |
 | `--epochs` | int | from cfg | Number of training epochs. |
 | `--imgsz` | int | from cfg | Training image size (square). |
-| `--project` | path | from cfg | Parent directory for run outputs. |
+| `--project` | path | from cfg | Parent directory for run outputs. Resolved to an absolute path against the working directory; without this resolution, ultralytics would place relative paths under its global `runs_dir` setting. |
 | `--name` | string | auto-numbered | Run name. Outputs are written to `<project>/<name>`. |
 | `--batch` | int | from cfg | Images per gradient step. `-1` or a float in (0, 1] enables automatic batch sizing. |
 | `--workers` | int | from cfg | Dataloader worker processes. On Windows each worker is a separate Python process; large values can exhaust memory and surface as a CUDA out-of-memory error. |
@@ -50,7 +50,7 @@ Runs classification inference with a trained checkpoint and prints the top class
 | `--device` | string | auto | Compute device, as for `train`. |
 | `--top-k` | int, 1 to 5 | `3` | Number of top classes printed per image. |
 | `--save` | boolean flag | off | Save annotated prediction images under the run directory. |
-| `--project` | path | ultralytics default | Parent directory for saved outputs. |
+| `--project` | path | `runs` when `--save` is passed | Parent directory for saved outputs. Resolved to an absolute path against the working directory. |
 | `--name` | string | ultralytics default | Run name for saved outputs. |
 | `--exist-ok` | boolean flag | off | Reuse an existing output run directory instead of creating a numbered one. |
 | `--verbose` | boolean flag | off | Print ultralytics per-image progress output. |

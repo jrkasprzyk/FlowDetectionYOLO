@@ -15,6 +15,7 @@ Task-oriented recipes for specific problems.
 - [Configure training](how-to/configure-training.md): use the configuration file, override settings, and maintain multiple configurations.
 - [Split a dataset](how-to/split-a-dataset.md): control split ratios, create a test holdout, and keep related images in the same split.
 - [Choose a device](how-to/choose-a-device.md): select CUDA, CPU, or Apple MPS on each platform.
+- [Run a smoke test](how-to/run-a-smoke-test.md): verify the pipeline on a new machine with a small public dataset.
 
 ## Reference
 

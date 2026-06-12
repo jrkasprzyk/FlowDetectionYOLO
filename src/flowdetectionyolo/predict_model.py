@@ -1,5 +1,6 @@
 import argparse
 import json
+from pathlib import Path
 
 
 def _as_float(value):
@@ -98,8 +99,12 @@ def predict_model(
         "exist_ok": exist_ok,
         "verbose": verbose,
     }
+    # Resolve to an absolute path: ultralytics nests a relative project under
+    # its global runs_dir setting, which does not point at this repository.
     if project:
-        predict_kwargs["project"] = project
+        predict_kwargs["project"] = str(Path(project).resolve())
+    elif save:
+        predict_kwargs["project"] = str(Path("runs").resolve())
     if name:
         predict_kwargs["name"] = name
     if device:

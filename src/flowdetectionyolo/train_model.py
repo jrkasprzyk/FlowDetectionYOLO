@@ -1,4 +1,20 @@
 import argparse
+from pathlib import Path
+
+
+def resolve_project(project, cfg=None):
+    """Return the run output directory as an absolute path.
+
+    Ultralytics nests a relative 'project' under its global runs_dir setting,
+    which points at wherever ultralytics first ran on the machine, not at this
+    repository. An absolute path is used verbatim.
+    """
+    if project is None and cfg and Path(cfg).is_file():
+        import yaml
+
+        with open(cfg, encoding="utf-8") as fh:
+            project = (yaml.safe_load(fh) or {}).get("project")
+    return str(Path(project or "runs").resolve())
 
 
 def train_model(model_config, weights, cfg=None, **train_args):
@@ -16,6 +32,7 @@ def train_model(model_config, weights, cfg=None, **train_args):
     # Only pass explicitly-set arguments so unset CLI flags fall through to the
     # cfg yaml (and from there to ultralytics defaults).
     overrides = {key: value for key, value in train_args.items() if value is not None}
+    overrides["project"] = resolve_project(overrides.get("project"), cfg)
     if cfg:
         overrides["cfg"] = cfg
     model.train(**overrides)

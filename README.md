@@ -15,6 +15,9 @@ Requires Python 3.12+ and [Poetry](https://python-poetry.org/).
 poetry install
 ```
 
+To verify an installation end to end in about a minute, see
+[Run a smoke test](docs/how-to/run-a-smoke-test.md).
+
 Works on all platforms from the same lock file:
 
 | Platform | torch wheel | GPU support |
