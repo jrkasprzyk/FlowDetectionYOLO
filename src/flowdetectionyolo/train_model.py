@@ -5,7 +5,7 @@ def train_model(model_config, weights, cfg=None, **train_args):
     try:
         from ultralytics import YOLO
     except ImportError:
-        print("ultralytics is not installed. Install the advanced dependency group before training.")
+        print("ultralytics is not installed. Run 'poetry install' before training.")
         return 1
 
     model = YOLO(model_config)
@@ -24,7 +24,7 @@ def train_model(model_config, weights, cfg=None, **train_args):
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description="Train the masonviewpy image classifier. "
+        description="Train the YOLO image classifier. "
         "Precedence: CLI flags > --cfg yaml > ultralytics defaults."
     )
     parser.add_argument("--model-config", default="yolo26n-cls.yaml", help="YOLO model config path.")
@@ -46,6 +46,13 @@ def build_parser():
         default=None,
         help="Pre-split training data directory (train/val subdirectories). "
         "Pointing at an unsplit directory makes ultralytics re-split it on every run.",
+    )
+    parser.add_argument(
+        "--device",
+        default=None,
+        help="Compute device: 0 (first NVIDIA GPU), cpu, or mps (Apple Silicon "
+        "GPU via Metal Performance Shaders). Auto-detection prefers CUDA but "
+        "never picks mps, so pass --device mps explicitly on a Mac.",
     )
     parser.add_argument("--epochs", type=int, default=None, help="Training epochs.")
     parser.add_argument("--imgsz", type=int, default=None, help="Image size.")
@@ -73,6 +80,7 @@ def main():
         args.weights,
         args.cfg,
         data=args.data,
+        device=args.device,
         epochs=args.epochs,
         imgsz=args.imgsz,
         project=args.project,

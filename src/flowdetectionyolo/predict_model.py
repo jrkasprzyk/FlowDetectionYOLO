@@ -80,12 +80,13 @@ def predict_model(
     exist_ok,
     verbose,
     as_json,
+    device=None,
 ):
     try:
         from ultralytics import YOLO
     except ImportError:
         print(
-            "ultralytics is not installed. Install the advanced dependency group before prediction."
+            "ultralytics is not installed. Run 'poetry install' before prediction."
         )
         return 1
 
@@ -101,6 +102,8 @@ def predict_model(
         predict_kwargs["project"] = project
     if name:
         predict_kwargs["name"] = name
+    if device:
+        predict_kwargs["device"] = device
 
     results = model.predict(**predict_kwargs)
     summaries = [summarize_result(result, top_k) for result in results]
@@ -110,7 +113,7 @@ def predict_model(
 
 def build_parser():
     parser = argparse.ArgumentParser(
-        description="Predict classes with a trained masonviewpy image classifier."
+        description="Predict classes with a trained YOLO image classifier."
     )
     parser.add_argument(
         "--weights",
@@ -123,6 +126,13 @@ def build_parser():
         help="Image, directory, glob, URL, or video source.",
     )
     parser.add_argument("--imgsz", type=int, default=640, help="Image size.")
+    parser.add_argument(
+        "--device",
+        default=None,
+        help="Compute device: 0 (first NVIDIA GPU), cpu, or mps (Apple Silicon "
+        "GPU via Metal Performance Shaders). Auto-detection prefers CUDA but "
+        "never picks mps, so pass --device mps explicitly on a Mac.",
+    )
     parser.add_argument(
         "--top-k",
         type=int,
@@ -172,6 +182,7 @@ def main():
         args.exist_ok,
         args.verbose,
         args.json,
+        device=args.device,
     )
 
 

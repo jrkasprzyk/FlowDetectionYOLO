@@ -29,7 +29,11 @@ workers: 2
 project: runs
 # name:              # experiment name; results land in project/name
 # exist_ok: False    # overwrite existing project/name instead of suffixing
-# device:            # 0 for first GPU, 'cpu', etc.; auto-detects by default
+# device:            # 0 for first NVIDIA GPU, 'cpu', or 'mps' (Apple Silicon GPU
+#                    # via Metal Performance Shaders). Auto-detection prefers CUDA
+#                    # but never picks mps — on a Mac pass --device mps (or set it
+#                    # here in a local copy; don't commit it, it breaks other
+#                    # platforms).
 # seed: 0            # random seed for reproducibility
 # resume: False      # resume training from last checkpoint in the run dir
 # fraction: 1.0      # fraction of training dataset to use
