@@ -23,8 +23,16 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
-torch = { source = "pytorch-cu128" }
-torchvision = { source = "pytorch-cu128" }
+# CUDA wheels for Windows/Linux; macOS has no cu128 builds, so it falls back
+# to the PyPI wheel (CPU/MPS).
+torch = [
+    { source = "pytorch-cu128", markers = "sys_platform != 'darwin'" },
+    { markers = "sys_platform == 'darwin'" },
+]
+torchvision = [
+    { source = "pytorch-cu128", markers = "sys_platform != 'darwin'" },
+    { markers = "sys_platform == 'darwin'" },
+]
 
 [[tool.poetry.source]]
 name = "pytorch-cu128"
