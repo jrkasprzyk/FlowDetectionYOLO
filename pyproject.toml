@@ -3,7 +3,7 @@ name = "flowdetectionyolo"
 version = "0.1.0"
 description = "YOLO classification: dataset splitting, training, and prediction"
 authors = [
-    {name = "Joseph Kasprzyk", email = "jkasprzyk@gmail.com"}
+    {name = "Joseph Kasprzyk", email = "joseph.kasprzyk@colorado.edu"}
 ]
 license = "MIT"
 requires-python = ">=3.12"
@@ -12,6 +12,9 @@ dependencies = [
     "torch (>=2.7.1,<3.0.0)",
     "torchvision (>=0.22.1,<1.0.0)"
 ]
+
+[project.urls]
+repository = "https://github.com/jrkasprzyk/flowdetectionyolo"
 
 [project.scripts]
 split = "flowdetectionyolo.split_dataset:main"
