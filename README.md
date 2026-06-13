@@ -9,12 +9,15 @@ and configuration reference, and a discussion of the dataset splitting design.
 
 ## Install
 
-Requires Python 3.12+ and [Poetry](https://python-poetry.org/).
+Requires Python 3.12 or 3.13 (not 3.14 — PyTorch has no 3.14 wheels yet) and
+[Poetry](https://python-poetry.org/). With those in place:
 
 ```sh
 poetry install
 ```
 
+Starting from a fresh machine? The [install guide](docs/how-to/install.md)
+walks through Python 3.12, pipx, and Poetry step by step on macOS and Windows.
 To verify an installation end to end in about a minute, see
 [Run a smoke test](docs/how-to/run-a-smoke-test.md).
 
