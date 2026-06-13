@@ -121,17 +121,37 @@ needs is installed in step 4, into a virtual environment that Poetry manages.
 
 ## Step 4: Install the project
 
+### Recommended: keep the virtual environment in the project folder
+
+By default Poetry stores the virtual environment in a global cache directory,
+away from your code. Telling it to create a `.venv` folder inside the project
+instead is usually more convenient: the environment is easy to find, easy to
+delete, and editors pick it up automatically. Set this once:
+
+```sh
+poetry config virtualenvs.in-project true
+```
+
+This is a global, per-machine setting that applies to all your Poetry
+projects, so you only run it once per computer (do it on both macOS and
+Windows). The project's `.gitignore` already excludes `.venv`, so the
+environment is never committed. If you change this setting after an
+environment already exists, remove the old one with `poetry env remove --all`
+and reinstall so the new `.venv` gets created.
+
+### Point Poetry at Python 3.12 and install
+
 From the repository root (the folder containing `pyproject.toml`), point
 Poetry at your 3.12 interpreter, then install:
 
-### macOS
+#### macOS
 
 ```sh
 poetry env use python3.12
 poetry install
 ```
 
-### Windows
+#### Windows
 
 Find the full path to your 3.12 interpreter, then hand it to Poetry:
 
