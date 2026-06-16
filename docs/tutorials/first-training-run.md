@@ -4,7 +4,7 @@ This tutorial walks through the complete workflow once: installing the project, 
 
 ## Prerequisites
 
-- Python 3.12 or later
+- Python 3.12 or 3.13 (not 3.14)
 - [Poetry](https://python-poetry.org/)
 - A classification dataset: a directory containing one subdirectory per class, with the images of each class inside its subdirectory. For example:
 
@@ -28,7 +28,9 @@ From the repository root:
 poetry install
 ```
 
-This creates a virtual environment in `.venv` and installs all dependencies, including PyTorch and ultralytics. On Windows and Linux the CUDA build of PyTorch is installed; on macOS the standard build is installed. See [Choose a device](../how-to/choose-a-device.md) for what this means for training speed.
+This creates a virtual environment and installs all dependencies, including PyTorch and ultralytics. On Windows and Linux the CUDA build of PyTorch is installed; on macOS the standard build is installed. See [Choose a device](../how-to/choose-a-device.md) for what this means for training speed.
+
+If you are starting from a machine without Python 3.12 or Poetry, follow [Install from scratch](../how-to/install.md) first; it sets up Python, pipx, and Poetry on macOS and Windows before this `poetry install` step.
 
 ## Step 2: Split the dataset
 

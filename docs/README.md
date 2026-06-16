@@ -12,6 +12,7 @@ Learning-oriented lessons for newcomers.
 
 Task-oriented recipes for specific problems.
 
+- [Install from scratch](how-to/install.md): set up Python 3.12, pipx, Poetry, and the project on a fresh macOS or Windows machine.
 - [Configure training](how-to/configure-training.md): use the configuration file, override settings, and maintain multiple configurations.
 - [Split a dataset](how-to/split-a-dataset.md): control split ratios, create a test holdout, and keep related images in the same split.
 - [Choose a device](how-to/choose-a-device.md): select CUDA, CPU, or Apple MPS on each platform.
