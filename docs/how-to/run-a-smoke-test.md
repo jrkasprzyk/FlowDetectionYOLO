@@ -1,6 +1,6 @@
 # Run a smoke test
 
-This guide verifies the full pipeline (installation, training, prediction) on a machine in about a minute, using a small public dataset instead of project data. Use it after setting up a new machine or changing dependencies.
+This guide verifies the full pipeline (installation, training, prediction, evaluation) on a machine in about a minute, using a small public dataset instead of project data. Use it after setting up a new machine or changing dependencies.
 
 ## Dataset
 
@@ -30,12 +30,20 @@ poetry run predict --weights runs/smoke/weights/best.pt --source <datasets_dir>/
 
 Replace `<datasets_dir>` with the directory printed above. Expected result: one block per image, each naming a predicted digit class with a confidence value.
 
+Then score the whole test split, which `mnist160` already lays out as `test/<digit>/`:
+
+```sh
+poetry run eval --weights runs/smoke/weights/best.pt --data <datasets_dir>/mnist160 --split test
+```
+
+Expected result: a top1 and top5 accuracy line and an output directory under `runs/`.
+
 ## Interpreting the outcome
 
-The smoke test verifies mechanics, not model quality. After a single epoch on 80 training images, accuracy near chance (top-1 around 0.1 to 0.3) is normal, and most predictions will be wrong. The test passes if both commands complete without error, the run directory appears under `runs/`, and predictions are printed.
+The smoke test verifies mechanics, not model quality. After a single epoch on 80 training images, accuracy near chance (top-1 around 0.1 to 0.3) is normal, and most predictions will be wrong. The test passes if the commands complete without error, the run directory appears under `runs/`, and predictions and an accuracy figure are printed.
 
 Larger datasets are available by the same mechanism when a longer test is wanted: `imagenette160` (about 100 MB), `cifar10` (about 170 MB). Substitute the name in the `--data` flag.
 
 ## Note on output locations
 
-Ultralytics maintains global settings (`datasets_dir`, `runs_dir`, `weights_dir`) that default to wherever it was first used on a machine. The training and prediction commands in this repository resolve their output directory to an absolute path under the current working directory, so run outputs land in this repository's `runs/` regardless of those settings. Dataset downloads still follow the global `datasets_dir`.
+Ultralytics maintains global settings (`datasets_dir`, `runs_dir`, `weights_dir`) that default to wherever it was first used on a machine. The training, prediction, and evaluation commands in this repository resolve their output directory to an absolute path under the current working directory, so run outputs land in this repository's `runs/` regardless of those settings. Dataset downloads still follow the global `datasets_dir`.

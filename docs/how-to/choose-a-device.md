@@ -1,6 +1,6 @@
 # Choose a device
 
-This guide covers selecting the compute device for training and prediction on each supported platform.
+This guide covers selecting the compute device for training, prediction, and evaluation on each supported platform.
 
 ## Default behavior
 
@@ -8,11 +8,12 @@ When no device is specified, ultralytics selects one automatically: the first NV
 
 ## Specify a device
 
-Both `train` and `predict` accept a `--device` flag:
+`train`, `predict`, and `eval` accept a `--device` flag:
 
 ```sh
 poetry run train --device mps
 poetry run predict --device mps
+poetry run eval --device mps
 ```
 
 Accepted values:

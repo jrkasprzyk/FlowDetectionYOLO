@@ -21,7 +21,7 @@ Task-oriented recipes for specific problems.
 
 Technical descriptions of the command line interfaces and configuration keys.
 
-- [Command line reference](reference/cli.md): all flags for `split`, `train`, and `predict`.
+- [Command line reference](reference/cli.md): all flags for `split`, `train`, `predict`, and `eval`.
 - [Training configuration reference](reference/training-config.md): all keys accepted in the training configuration file.
 
 ## Explanation

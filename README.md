@@ -1,7 +1,7 @@
 # flowdetectionyolo
 
 YOLO image classification pipeline: split a dataset, train a classifier, run
-predictions.
+predictions, evaluate on a labeled split.
 
 Full documentation is in [docs/](docs/README.md): a getting-started
 [tutorial](docs/tutorials/first-training-run.md), how-to guides, command line
@@ -35,6 +35,7 @@ to the working directory).
 poetry run split     # data/classification_test -> data/classification_test_split (train/val/test)
 poetry run train     # trains per configs/train_default.yaml, outputs to runs/
 poetry run predict   # classifies images with trained weights
+poetry run eval      # top1/top5 accuracy on a labeled split (default: test)
 ```
 
 Each command takes `--help` for full options. Training setting precedence:
@@ -49,6 +50,7 @@ GPUs, so on a Mac you must opt in explicitly:
 ```sh
 poetry run train --device mps
 poetry run predict --device mps
+poetry run eval --device mps
 ```
 
 `mps` is [Metal Performance Shaders](https://developer.apple.com/metal/pytorch/),

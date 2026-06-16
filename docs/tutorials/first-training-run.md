@@ -1,6 +1,6 @@
 # Your first training run
 
-This tutorial walks through the complete workflow once: installing the project, splitting a dataset, training a classifier, and running a prediction. At the end you will have a trained model checkpoint and a classification result for one of your own images.
+This tutorial walks through the complete workflow once: installing the project, splitting a dataset, training a classifier, running a prediction, and evaluating accuracy. At the end you will have a trained model checkpoint, a classification result for one of your own images, and an accuracy score on the test split.
 
 ## Prerequisites
 
@@ -88,6 +88,25 @@ To classify a single image instead, pass its path with `--source`:
 ```sh
 poetry run predict --weights runs/train/weights/best.pt --source path/to/image.jpg
 ```
+
+## Step 5: Evaluate
+
+`predict` reports per-image guesses but no overall score, and it does not read the `class/image` folder layout. To measure accuracy on the held-out test split, use `eval`:
+
+```sh
+poetry run eval --weights runs/train/weights/best.pt --split test
+```
+
+It reads `data/classification_test_split/test`, where each class subdirectory supplies the ground-truth labels, and prints top1 and top5 accuracy:
+
+```
+split: test
+  top1 accuracy: 0.9333
+  top5 accuracy: 1.0000
+  outputs: <repository>/runs/val
+```
+
+A confusion matrix is written to the output directory.
 
 ## Where to go next
 

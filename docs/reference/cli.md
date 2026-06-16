@@ -1,6 +1,6 @@
 # Command line reference
 
-The project installs three commands, run as `poetry run <command>` from the repository root. Relative paths in defaults and configuration are resolved against the current working directory.
+The project installs four commands, run as `poetry run <command>` from the repository root. Relative paths in defaults and configuration are resolved against the current working directory.
 
 All commands exit with status 0 on success and 1 on failure. Each prints a full option listing with `--help`.
 
@@ -57,3 +57,26 @@ Runs classification inference with a trained checkpoint and prints the top class
 | `--json` | boolean flag | off | Print results as JSON instead of plain text. |
 
 Output format, plain text: one block per image, with the image path followed by one line per predicted class, giving rank, class name, and confidence to four decimal places. Output format, JSON: a list of objects, each with `path` and `predictions`; each prediction has `rank`, `class_index`, `class_name`, and `confidence`. Images for which the model returns no classification probabilities produce an `error` field instead of predictions.
+
+`predict` treats a directory source as a flat collection of images and does not descend into class subdirectories. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
+
+## eval
+
+Evaluates a trained checkpoint on a labeled split and prints top1 and top5 accuracy. Reads the standard `<split>/<class>/<image>` folder layout, so the class subdirectory names supply the ground-truth labels. Ultralytics writes a confusion matrix and related plots under the run directory.
+
+| Flag | Type | Default | Description |
+| --- | --- | --- | --- |
+| `--weights` | path | `from_train_2026-04-28.pt` | Trained classification weights. |
+| `--data` | path | `data/classification_test_split` | Dataset root containing `train`, `val`, and `test` subdirectories. |
+| `--split` | `train`, `val`, or `test` | `test` | Which split under the dataset root to evaluate. |
+| `--imgsz` | int | `640` | Evaluation image size. |
+| `--device` | string | auto | Compute device, as for `train`. |
+| `--project` | path | `runs` | Parent directory for saved plots. Resolved to an absolute path against the working directory. |
+| `--name` | string | ultralytics default | Run name for saved plots. |
+| `--exist-ok` | boolean flag | off | Reuse an existing output run directory instead of creating a numbered one. |
+| `--verbose` | boolean flag | off | Print ultralytics per-batch progress output. |
+| `--json` | boolean flag | off | Print the metrics summary as JSON instead of plain text. |
+
+Output format, plain text: the split name, then top1 and top5 accuracy to four decimal places, then the output directory holding the plots. Output format, JSON: an object with `split`, `top1`, `top5`, and `save_dir`.
+
+Caveat: the default weights were trained on data that now includes images in val and test, so evaluating them inflates accuracy. Meaningful numbers require weights trained on a split that excluded the evaluated set.

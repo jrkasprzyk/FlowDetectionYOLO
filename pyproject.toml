@@ -20,6 +20,7 @@ repository = "https://github.com/jrkasprzyk/flowdetectionyolo"
 split = "flowdetectionyolo.split_dataset:main"
 train = "flowdetectionyolo.train_model:main"
 predict = "flowdetectionyolo.predict_model:main"
+eval = "flowdetectionyolo.eval_model:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
