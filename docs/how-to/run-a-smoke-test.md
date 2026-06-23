@@ -1,14 +1,35 @@
 # Run a smoke test
 
-This guide verifies the full pipeline (installation, training, prediction, evaluation) on a machine in about a minute, using a small public dataset instead of project data. Use it after setting up a new machine or changing dependencies.
+This guide verifies the full pipeline (installation, training, prediction, evaluation) on a machine in about a minute, using a small public dataset instead of project data. Use it after setting up a new machine or environment to confirm commands and dependencies work end to end.
 
 ## Dataset
 
-Ultralytics downloads several classification datasets automatically when their name is passed as the training data argument. The smallest is `mnist160`: 160 MNIST digit images (8 per class, 10 classes, under 1 MB). The download is stored in the ultralytics global datasets directory, not in this repository. To display that directory:
+Ultralytics downloads several classification datasets automatically when their name is passed as the training data argument. The smallest is `mnist160`: 160 MNIST digit images (8 per class, 10 classes).
+
+`mnist160` is organized as:
+
+- `train/<digit>/`
+- `test/<digit>/`
+
+There is no separate `val/` directory in this dataset.
+
+Find your datasets directory:
 
 ```sh
 poetry run python -c "from ultralytics import settings; print(settings['datasets_dir'])"
 ```
+
+### Split naming note (`test` vs `val`)
+
+For this smoke test, Ultralytics uses `mnist160/test` as the validation source during training because the dataset ships with only `train` and `test` folders. As a result, training logs may label metrics as `val/*` even though files come from `.../mnist160/test/...`.
+
+This is expected and does not indicate a mismatch.
+
+Quick mapping:
+
+- Dataset folder name: `test`
+- Role during `train`: validation (`val` in logs)
+- Role during explicit evaluation with `--split test`: test
 
 ## Procedure
 
@@ -40,10 +61,14 @@ Expected result: a top1 and top5 accuracy line and an output directory under `ru
 
 ## Interpreting the outcome
 
-The smoke test verifies mechanics, not model quality. After a single epoch on 80 training images, accuracy near chance (top-1 around 0.1 to 0.3) is normal, and most predictions will be wrong. The test passes if the commands complete without error, the run directory appears under `runs/`, and predictions and an accuracy figure are printed.
+The smoke test verifies mechanics, not model quality. After a single epoch on 80 training images, accuracy near chance (top-1 around 0.1 to 0.3) is normal, and most predictions will be wrong. The test is successful if commands complete and produce artifacts in the expected locations.
 
 Larger datasets are available by the same mechanism when a longer test is wanted: `imagenette160` (about 100 MB), `cifar10` (about 170 MB). Substitute the name in the `--data` flag.
 
 ## Note on output locations
 
-Ultralytics maintains global settings (`datasets_dir`, `runs_dir`, `weights_dir`) that default to wherever it was first used on a machine. The training, prediction, and evaluation commands in this repository resolve their output directory to an absolute path under the current working directory, so run outputs land in this repository's `runs/` regardless of those settings. Dataset downloads still follow the global `datasets_dir`.
+Ultralytics maintains global settings (`datasets_dir`, `runs_dir`, `weights_dir`) that default to wherever it was first used on a machine. The training, prediction, and evaluation commands in this repo use relative run paths (for example `runs/smoke/...`) and dataset paths rooted at `datasets_dir`. If output appears in an unexpected location, inspect:
+
+```sh
+poetry run python -c "from ultralytics import settings; print(settings)"
+```
