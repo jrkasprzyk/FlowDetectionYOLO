@@ -48,6 +48,8 @@ A nonzero unmatched count indicates filenames that do not follow the expected pa
 
 Grouping makes split sizes lumpier, because whole groups move between splits rather than single images.
 
+For expressions tailored to this project's camera-trap filenames, including grouping by year, month, flow event, or camera, see [Customize groupings with regex](customize-groupings-with-regex.md).
+
 ## Produce a different split
 
 Assignment is deterministic: rerunning the command with the same arguments reproduces the same split. To obtain a different assignment, for example to check that results are not an artifact of one particular split, pass an integer seed:

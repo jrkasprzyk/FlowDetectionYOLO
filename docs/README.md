@@ -15,6 +15,7 @@ Task-oriented recipes for specific problems.
 - [Install from scratch](how-to/install.md): set up Python 3.12, pipx, Poetry, and the project on a fresh macOS or Windows machine.
 - [Configure training](how-to/configure-training.md): use the configuration file, override settings, and maintain multiple configurations.
 - [Split a dataset](how-to/split-a-dataset.md): control split ratios, create a test holdout, and keep related images in the same split.
+- [Customize groupings with regex](how-to/customize-groupings-with-regex.md): build `--group-regex` expressions for this dataset's camera-trap filenames, grouping by year, month, flow event, or camera.
 - [Choose a device](how-to/choose-a-device.md): select CUDA, CPU, or Apple MPS on each platform.
 - [Run a smoke test](how-to/run-a-smoke-test.md): verify the pipeline on a new machine with a small public dataset.
 
