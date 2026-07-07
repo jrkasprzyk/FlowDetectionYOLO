@@ -77,7 +77,7 @@ Use the trained checkpoint to classify the validation images. The `--model` flag
 poetry run predict --model runs/train/weights/best.pt
 ```
 
-By default this classifies every image in `data/classification_test_split/val` and prints the top three classes for each, with confidence values. The results go to the terminal only; no files are written unless `--save` is passed, in which case annotated copies of the images land in a run directory under `runs/`, reported as an absolute path:
+By default this classifies every image in `data/classification_test_split/val` and prints the top three classes for each, with confidence values. The results go to the terminal only; no files are written unless `--save` is passed, in which case annotated copies of the images are saved under `runs/` (for example `runs/predict/`):
 
 ```
 data\classification_test_split\val\flowing\img_042.jpg
