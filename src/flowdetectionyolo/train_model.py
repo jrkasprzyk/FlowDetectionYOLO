@@ -50,7 +50,7 @@ def build_parser():
         default="yolo26n-cls.pt",
         help="Checkpoint (.pt) whose weights initialize training. Default is the "
         "official ImageNet-pretrained checkpoint; pass an earlier run's best.pt "
-        "to continue from prior training.",
+        "to fine-tune from prior training.",
     )
     parser.add_argument(
         "--cfg",
