@@ -91,9 +91,9 @@ def build_parser():
         "(reports top1/top5 accuracy over the class/image folder layout)."
     )
     parser.add_argument(
-        "--weights",
-        default="from_train_2026-04-28.pt",
-        help="Trained YOLO classification weights.",
+        "--model",
+        required=True,
+        help="Trained YOLO classification model checkpoint (.pt).",
     )
     parser.add_argument(
         "--data",
@@ -141,7 +141,7 @@ def build_parser():
 def main():
     args = build_parser().parse_args()
     return eval_model(
-        args.weights,
+        args.model,
         args.data,
         args.split,
         args.imgsz,

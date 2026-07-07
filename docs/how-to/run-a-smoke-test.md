@@ -46,7 +46,7 @@ Expected result: ultralytics downloads the dataset if absent, trains one epoch i
 Then predict with the new checkpoint against one class folder of the downloaded dataset:
 
 ```sh
-poetry run predict --weights runs/smoke/weights/best.pt --source <datasets_dir>/mnist160/test/7 --top-k 1
+poetry run predict --model runs/smoke/weights/best.pt --source <datasets_dir>/mnist160/test/7 --top-k 1
 ```
 
 Replace `<datasets_dir>` with the directory printed above. Expected result: one block per image, each naming a predicted digit class with a confidence value.
@@ -54,7 +54,7 @@ Replace `<datasets_dir>` with the directory printed above. Expected result: one 
 Then score the whole test split, which `mnist160` already lays out as `test/<digit>/`:
 
 ```sh
-poetry run eval --weights runs/smoke/weights/best.pt --data <datasets_dir>/mnist160 --split test
+poetry run eval --model runs/smoke/weights/best.pt --data <datasets_dir>/mnist160 --split test
 ```
 
 Expected result: a top1 and top5 accuracy line and an output directory under `runs/`.

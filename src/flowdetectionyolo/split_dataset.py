@@ -133,9 +133,9 @@ def build_parser():
         )
     )
     parser.add_argument(
-        "--source",
+        "--source-dir",
         default="data/classification_test",
-        help="Classification dataset root directory (one subdirectory per class).",
+        help="Classification dataset source directory (one subdirectory per class).",
     )
     parser.add_argument(
         "--train-ratio",
@@ -178,7 +178,7 @@ def main():
     args = parser.parse_args()
     if args.train_ratio + args.val_ratio > 1 + RATIO_TOLERANCE:
         parser.error("train ratio plus val ratio must not exceed 1")
-    return split_dataset(args.source, args.train_ratio, args.val_ratio, args.seed, args.group_regex)
+    return split_dataset(args.source_dir, args.train_ratio, args.val_ratio, args.seed, args.group_regex)
 
 
 if __name__ == "__main__":

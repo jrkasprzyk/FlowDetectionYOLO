@@ -4,13 +4,13 @@ version: 2.1
 date_created: 2026-07-01
 last_updated: 2026-07-07
 owner: Joseph Kasprzyk
-status: 'Planned'
+status: 'Completed'
 tags: [documentation, cli, refactor, bug]
 ---
 
 # Introduction
 
-![Status: Planned](https://img.shields.io/badge/status-Planned-blue)
+![Status: Completed](https://img.shields.io/badge/status-Completed-brightgreen)
 
 This plan resolves [Issue #1](https://github.com/jrkasprzyk/FlowDetectionYOLO/issues/1): a CLI flag consistency audit plus documentation clarity fixes in the tutorial and reference.
 
@@ -48,10 +48,10 @@ Decisions (v2.1, breaking changes accepted):
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-001 | `split_dataset.py`: in `build_parser`, change `--source` to `--source-dir` (keep `default="data/classification_test"` and help text, updating the help wording to say "source directory"). In `main`, change `args.source` to `args.source_dir` in the `split_dataset(...)` call. Function `split_dataset` signature and internal variable names may stay (`source` param) since they are not user-facing. | | |
-| TASK-002 | `predict_model.py`: in `build_parser`, change `--weights` to `--model`, drop the default, add `required=True`, help "Trained YOLO classification model checkpoint (.pt)." In `main`, change `args.weights` to `args.model`. Internal `predict_model(weights, ...)` param may stay. | | |
-| TASK-003 | `eval_model.py`: same as TASK-002 — `--weights` → `--model`, required with no default, `args.weights` → `args.model`, help text updated. | | |
-| TASK-004 | `train_model.py`: in `build_parser`, change `--weights` to `--initial-weights` (keep `default="yolo26n-cls.pt"`), help "Checkpoint (.pt) whose weights initialize training. Default is the official ImageNet-pretrained checkpoint; pass an earlier run's best.pt to continue from prior training." In `main`, change `args.weights` to `args.initial_weights`. `--model-config` and the `train_model(model_config, weights, ...)` internals are unchanged. | | |
+| TASK-001 | `split_dataset.py`: in `build_parser`, change `--source` to `--source-dir` (keep `default="data/classification_test"` and help text, updating the help wording to say "source directory"). In `main`, change `args.source` to `args.source_dir` in the `split_dataset(...)` call. Function `split_dataset` signature and internal variable names may stay (`source` param) since they are not user-facing. | ✅ | 2026-07-07 |
+| TASK-002 | `predict_model.py`: in `build_parser`, change `--weights` to `--model`, drop the default, add `required=True`, help "Trained YOLO classification model checkpoint (.pt)." In `main`, change `args.weights` to `args.model`. Internal `predict_model(weights, ...)` param may stay. | ✅ | 2026-07-07 |
+| TASK-003 | `eval_model.py`: same as TASK-002 — `--weights` → `--model`, required with no default, `args.weights` → `args.model`, help text updated. | ✅ | 2026-07-07 |
+| TASK-004 | `train_model.py`: in `build_parser`, change `--weights` to `--initial-weights` (keep `default="yolo26n-cls.pt"`), help "Checkpoint (.pt) whose weights initialize training. Default is the official ImageNet-pretrained checkpoint; pass an earlier run's best.pt to continue from prior training." In `main`, change `args.weights` to `args.initial_weights`. `--model-config` and the `train_model(model_config, weights, ...)` internals are unchanged. | ✅ | 2026-07-07 |
 
 ### Implementation Phase 2
 
@@ -59,9 +59,9 @@ Decisions (v2.1, breaking changes accepted):
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-005 | In the `## split` section: rename the `--source` row and the prose ("Reads `--source`, writes `<source>_split`") to `--source-dir`. | | |
-| TASK-006 | In the `## predict` and `## eval` sections: rename each `--weights` row to `--model`, replace the stale default `from_train_2026-04-28.pt` with "(required)", and update descriptions. In the `## train` section: rename the `--weights` row (line ~28) to `--initial-weights`, keeping its default and description. | | |
-| TASK-007 | Add a subsection after the intro paragraph, before `## split`, titled "Dataset inputs: `--source` vs `--data`", stating: `--source` is a raw input to process (`split --source-dir` is the unsplit class-foldered dataset; `predict --source` is an arbitrary inference source — image, dir, glob, URL, video); `--data` is a prepared/split dataset root fed to the model (`train`, `eval`), mirroring ultralytics' `data` argument. Note the checkpoint arguments: `--model` (required trained checkpoint) on predict/eval, matching ultralytics, while `train` uses `--model-config` (architecture yaml) plus `--initial-weights` (initialization checkpoint). | | |
+| TASK-005 | In the `## split` section: rename the `--source` row and the prose ("Reads `--source`, writes `<source>_split`") to `--source-dir`. | ✅ | 2026-07-07 |
+| TASK-006 | In the `## predict` and `## eval` sections: rename each `--weights` row to `--model`, replace the stale default `from_train_2026-04-28.pt` with "(required)", and update descriptions. In the `## train` section: rename the `--weights` row (line ~28) to `--initial-weights`, keeping its default and description. | ✅ | 2026-07-07 |
+| TASK-007 | Add a subsection after the intro paragraph, before `## split`, titled "Dataset inputs: `--source` vs `--data`", stating: `--source` is a raw input to process (`split --source-dir` is the unsplit class-foldered dataset; `predict --source` is an arbitrary inference source — image, dir, glob, URL, video); `--data` is a prepared/split dataset root fed to the model (`train`, `eval`), mirroring ultralytics' `data` argument. Note the checkpoint arguments: `--model` (required trained checkpoint) on predict/eval, matching ultralytics, while `train` uses `--model-config` (architecture yaml) plus `--initial-weights` (initialization checkpoint). | ✅ | 2026-07-07 |
 
 ### Implementation Phase 3
 
@@ -69,13 +69,13 @@ Decisions (v2.1, breaking changes accepted):
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-008 | Prerequisites: revise the paragraph after the tree so it leads with "your dataset can live in any directory; `data/classification_test` is only the default", and point elsewhere with `split --source-dir <path>`. Add an inline link to `../reference/cli.md`. | | |
-| TASK-009 | Step 2 (split): annotate the example to note it reads `--source-dir` (default `data/classification_test`) and that a custom location uses `poetry run split --source-dir <path>`. Cross-link `../reference/cli.md#split`. | | |
-| TASK-010 | Step 3 (train): note `--data` selects the pre-split dataset (defaulting from cfg) and that train's starting checkpoint is `--initial-weights` (distinct from predict/eval's `--model`, which is a finished checkpoint). Keep existing `--epochs`/`--device` notes. Cross-link `../reference/cli.md#train`. | | |
-| TASK-011 | Step 4 (predict): update the two examples to `--model` (was `--weights`). Rewrite the front matter to explain: `--model` is required and takes the trained checkpoint from Step 3; predict prints per-image top-k guesses to stdout and writes no files unless `--save` is given; `--source` is an inference source (single image, flat directory, glob, URL, video), distinct from `split --source-dir` (class-foldered dataset); `--imgsz`/`--device` share meaning across commands. Cross-link `../reference/cli.md#predict`. | | |
-| TASK-012 | Step 4: add a sentence stating saved outputs (when `--save` is passed) land under `runs/`, resolved to an absolute path, so the "where did results go" confusion is resolved. | | |
-| TASK-013 | Step 5 (eval): update the example to `--model`. Expand the front matter to contrast eval with predict: eval reads the `<split>/<class>/<image>` layout, uses class folders as ground truth, and reports top1/top5 accuracy plus a confusion matrix, which predict cannot do. Cross-link `../reference/cli.md#eval`. | | |
-| TASK-014 | Verify "Where to go next" still reads coherently after per-step links are added; adjust wording if the cli.md link now duplicates awkwardly. Step 1 (install) needs no edit: its front matter already explains the step and it involves no CLI flags. | | |
+| TASK-008 | Prerequisites: revise the paragraph after the tree so it leads with "your dataset can live in any directory; `data/classification_test` is only the default", and point elsewhere with `split --source-dir <path>`. Add an inline link to `../reference/cli.md`. | ✅ | 2026-07-07 |
+| TASK-009 | Step 2 (split): annotate the example to note it reads `--source-dir` (default `data/classification_test`) and that a custom location uses `poetry run split --source-dir <path>`. Cross-link `../reference/cli.md#split`. | ✅ | 2026-07-07 |
+| TASK-010 | Step 3 (train): note `--data` selects the pre-split dataset (defaulting from cfg) and that train's starting checkpoint is `--initial-weights` (distinct from predict/eval's `--model`, which is a finished checkpoint). Keep existing `--epochs`/`--device` notes. Cross-link `../reference/cli.md#train`. | ✅ | 2026-07-07 |
+| TASK-011 | Step 4 (predict): update the two examples to `--model` (was `--weights`). Rewrite the front matter to explain: `--model` is required and takes the trained checkpoint from Step 3; predict prints per-image top-k guesses to stdout and writes no files unless `--save` is given; `--source` is an inference source (single image, flat directory, glob, URL, video), distinct from `split --source-dir` (class-foldered dataset); `--imgsz`/`--device` share meaning across commands. Cross-link `../reference/cli.md#predict`. | ✅ | 2026-07-07 |
+| TASK-012 | Step 4: add a sentence stating saved outputs (when `--save` is passed) land under `runs/`, resolved to an absolute path, so the "where did results go" confusion is resolved. | ✅ | 2026-07-07 |
+| TASK-013 | Step 5 (eval): update the example to `--model`. Expand the front matter to contrast eval with predict: eval reads the `<split>/<class>/<image>` layout, uses class folders as ground truth, and reports top1/top5 accuracy plus a confusion matrix, which predict cannot do. Cross-link `../reference/cli.md#eval`. | ✅ | 2026-07-07 |
+| TASK-014 | Verify "Where to go next" still reads coherently after per-step links are added; adjust wording if the cli.md link now duplicates awkwardly. Step 1 (install) needs no edit: its front matter already explains the step and it involves no CLI flags. | ✅ | 2026-07-07 |
 
 ### Implementation Phase 4
 
@@ -83,11 +83,11 @@ Decisions (v2.1, breaking changes accepted):
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-015 | `docs/how-to/run-a-smoke-test.md`: change `--weights` to `--model` on the `predict` (line ~49) and `eval` (line ~57) example commands. `--source`/`--data` there are unchanged; the smoke-test train command passes no `--weights`, so it needs no edit. | | |
-| TASK-016 | `docs/how-to/split-a-dataset.md`: change `poetry run split --source data/my_dataset` (line ~78) to `--source-dir`. Scan the rest of the file for other `--source` split references. | | |
-| TASK-017 | Runtime check: `poetry run split --help`, `poetry run predict --help`, `poetry run eval --help`, `poetry run train --help` all succeed and show the renamed/retained flags; bare `poetry run predict` and `poetry run eval` exit with argparse's required-argument error. | | |
-| TASK-018 | Grep the whole repo for residual `--source `/`--source=`/`--weights` (excluding this plan file) to confirm no stale references remain; after the train rename, no live `--weights` should exist anywhere. | | |
-| TASK-019 | Commit on branch `fix-cli-consistency-and-tutorial-clarity` referencing Issue #1. Do not push or open a PR until the user requests it. | | |
+| TASK-015 | `docs/how-to/run-a-smoke-test.md`: change `--weights` to `--model` on the `predict` (line ~49) and `eval` (line ~57) example commands. `--source`/`--data` there are unchanged; the smoke-test train command passes no `--weights`, so it needs no edit. | ✅ | 2026-07-07 |
+| TASK-016 | `docs/how-to/split-a-dataset.md`: change `poetry run split --source data/my_dataset` (line ~78) to `--source-dir`. Scan the rest of the file for other `--source` split references. | ✅ | 2026-07-07 |
+| TASK-017 | Runtime check: `poetry run split --help`, `poetry run predict --help`, `poetry run eval --help`, `poetry run train --help` all succeed and show the renamed/retained flags; bare `poetry run predict` and `poetry run eval` exit with argparse's required-argument error. | ✅ | 2026-07-07 |
+| TASK-018 | Grep the whole repo for residual `--source `/`--source=`/`--weights` (excluding this plan file) to confirm no stale references remain; after the train rename, no live `--weights` should exist anywhere. | ✅ | 2026-07-07 |
+| TASK-019 | Commit on branch `fix-cli-consistency-and-tutorial-clarity` referencing Issue #1. Do not push or open a PR until the user requests it. | ✅ | 2026-07-07 |
 
 ## 3. Alternatives
 

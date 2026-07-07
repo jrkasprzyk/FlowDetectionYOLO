@@ -75,7 +75,7 @@ Changing the ratios or the seed does reassign images. Treat the combination of r
 ## Split a dataset at a non-default location
 
 ```sh
-poetry run split --source data/my_dataset
+poetry run split --source-dir data/my_dataset
 ```
 
 The output is written alongside the source, in this case to `data/my_dataset_split`. To train on it, point training at the new directory:
