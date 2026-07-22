@@ -46,11 +46,11 @@ def build_parser():
     )
     parser.add_argument("--model-config", default="yolo26n-cls.yaml", help="YOLO model config path.")
     parser.add_argument(
-        "--weights",
+        "--initial-weights",
         default="yolo26n-cls.pt",
-        help="Optional weights path. Default is the official ImageNet-pretrained "
-        "checkpoint; repo-trained checkpoints saw images now in val/test, so "
-        "starting from them inflates eval metrics.",
+        help="Checkpoint (.pt) whose weights initialize training. Default is the "
+        "official ImageNet-pretrained checkpoint; pass an earlier run's best.pt "
+        "to fine-tune from prior training.",
     )
     parser.add_argument(
         "--cfg",
@@ -94,7 +94,7 @@ def main():
     args = build_parser().parse_args()
     return train_model(
         args.model_config,
-        args.weights,
+        args.initial_weights,
         args.cfg,
         data=args.data,
         device=args.device,

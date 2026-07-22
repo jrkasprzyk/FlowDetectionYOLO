@@ -121,9 +121,9 @@ def build_parser():
         description="Predict classes with a trained YOLO image classifier."
     )
     parser.add_argument(
-        "--weights",
-        default="from_train_2026-04-28.pt",
-        help="Trained YOLO classification weights.",
+        "--model",
+        required=True,
+        help="Trained YOLO classification model checkpoint (.pt).",
     )
     parser.add_argument(
         "--source",
@@ -177,7 +177,7 @@ def build_parser():
 def main():
     args = build_parser().parse_args()
     return predict_model(
-        args.weights,
+        args.model,
         args.source,
         args.imgsz,
         args.top_k,

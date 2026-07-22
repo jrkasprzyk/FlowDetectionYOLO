@@ -4,13 +4,19 @@ The project installs four commands, run as `poetry run <command>` from the repos
 
 All commands exit with status 0 on success and 1 on failure. Each prints a full option listing with `--help`.
 
+## Dataset inputs: `--source` vs `--data`
+
+The commands follow the ultralytics naming convention for their inputs. A `--source` flag names a raw input to process: for `split`, `--source-dir` is the unsplit dataset with one folder per class; for `predict`, `--source` is an arbitrary inference source, which may be a single image, a directory, a glob, a URL, or a video. A `--data` flag names a prepared, already-split dataset root fed to the model, as in `train` and `eval`; this mirrors the `data` argument of ultralytics `train` and `val`.
+
+The checkpoint arguments follow the same convention. `predict` and `eval` take `--model`, a required path to a trained checkpoint, matching ultralytics' `model=` argument. `train` instead takes `--model-config`, the architecture yaml, plus `--initial-weights`, the checkpoint whose weights initialize training.
+
 ## split
 
-Splits a classification dataset into train, val, and optionally test directories. Reads `--source`, writes `<source>_split` alongside it. Source files are copied, not moved. An existing `<source>_split` directory is deleted and rebuilt.
+Splits a classification dataset into train, val, and optionally test directories. Reads `--source-dir`, writes `<source-dir>_split` alongside it. Source files are copied, not moved. An existing `<source-dir>_split` directory is deleted and rebuilt.
 
 | Flag | Type | Default | Description |
 | --- | --- | --- | --- |
-| `--source` | path | `data/classification_test` | Dataset root directory, containing one subdirectory per class. |
+| `--source-dir` | path | `data/classification_test` | Dataset source directory, containing one subdirectory per class. |
 | `--train-ratio` | float | `0.8` | Approximate fraction of images assigned to the train split. Must be strictly between 0 and 1. |
 | `--val-ratio` | float | `0.1` | Approximate fraction assigned to the val split. Must be strictly between 0 and 1. The remainder after train and val becomes the test split; if no remainder exists, no test split is created. |
 | `--group-regex` | regex | none | Applied to each filename. Images sharing the match (first capture group if present, otherwise the whole match) are assigned to the same split. Non-matching files are assigned per image. Validated at argument parsing time. |
@@ -25,7 +31,7 @@ Trains a YOLO classification model. Settings precedence: command line flags, the
 | Flag | Type | Default | Description |
 | --- | --- | --- | --- |
 | `--model-config` | path | `yolo26n-cls.yaml` | YOLO model architecture definition. |
-| `--weights` | path | `yolo26n-cls.pt` | Initial weights. The default is the official ImageNet-pretrained checkpoint. Resolved against the working directory; ultralytics downloads the official checkpoint automatically if the file is absent. |
+| `--initial-weights` | path | `yolo26n-cls.pt` | Checkpoint whose weights initialize training. The default is the official ImageNet-pretrained checkpoint. Resolved against the working directory; ultralytics downloads the official checkpoint automatically if the file is absent. |
 | `--cfg` | path | `configs/train_default.yaml` | Training configuration file. Accepts any ultralytics training setting. See the [training configuration reference](training-config.md). |
 | `--data` | path | from cfg | Pre-split dataset directory containing `train` and `val` subdirectories. Pointing at an unsplit directory causes ultralytics to re-split it on every run. |
 | `--device` | string | auto | Compute device: a GPU index such as `0`, `cpu`, or `mps`. Automatic selection prefers CUDA and never selects MPS. |
@@ -44,7 +50,7 @@ Runs classification inference with a trained checkpoint and prints the top class
 
 | Flag | Type | Default | Description |
 | --- | --- | --- | --- |
-| `--weights` | path | `from_train_2026-04-28.pt` | Trained classification weights. |
+| `--model` | path | (required) | Trained classification model checkpoint (.pt). |
 | `--source` | path or URL | `data/classification_test_split/val` | Image, directory, glob, URL, or video. |
 | `--imgsz` | int | `640` | Inference image size. |
 | `--device` | string | auto | Compute device, as for `train`. |
@@ -66,7 +72,7 @@ Evaluates a trained checkpoint on a labeled split and prints top1 and top5 accur
 
 | Flag | Type | Default | Description |
 | --- | --- | --- | --- |
-| `--weights` | path | `from_train_2026-04-28.pt` | Trained classification weights. |
+| `--model` | path | (required) | Trained classification model checkpoint (.pt). |
 | `--data` | path | `data/classification_test_split` | Dataset root containing `train`, `val`, and `test` subdirectories. |
 | `--split` | `train`, `val`, or `test` | `test` | Which split under the dataset root to evaluate. |
 | `--imgsz` | int | `640` | Evaluation image size. |
@@ -79,4 +85,4 @@ Evaluates a trained checkpoint on a labeled split and prints top1 and top5 accur
 
 Output format, plain text: the split name, then top1 and top5 accuracy to four decimal places, then the output directory holding the plots. Output format, JSON: an object with `split`, `top1`, `top5`, and `save_dir`.
 
-Caveat: the default weights were trained on data that now includes images in val and test, so evaluating them inflates accuracy. Meaningful numbers require weights trained on a split that excluded the evaluated set.
+Caveat: meaningful numbers require a checkpoint trained on a split that excluded the evaluated set; evaluating a checkpoint whose training data overlaps val or test inflates accuracy.
