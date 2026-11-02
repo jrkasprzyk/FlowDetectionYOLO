@@ -64,7 +64,9 @@ Runs classification inference with a trained checkpoint and prints the top class
 
 Output format, plain text: one block per image, with the image path followed by one line per predicted class, giving rank, class name, and confidence to four decimal places. Output format, JSON: a list of objects, each with `path` and `predictions`; each prediction has `rank`, `class_index`, `class_name`, and `confidence`. Images for which the model returns no classification probabilities produce an `error` field instead of predictions.
 
-`predict` treats a directory source as a flat collection of images and does not descend into class subdirectories. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
+Results are printed as each image is processed, and memory use does not grow with the number of images, so large folders can be processed in one run. Redirect the output to keep it, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
+
+`predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems. Unsupported file types are skipped, but matching videos are processed frame by frame; use an image-only source if the tree also contains videos. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
 
 ## eval
 

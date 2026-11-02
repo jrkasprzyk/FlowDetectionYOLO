@@ -1,5 +1,6 @@
 import argparse
 import json
+import textwrap
 from pathlib import Path
 
 
@@ -52,21 +53,32 @@ def summarize_result(result, top_k):
 
 
 def print_summary(summaries, as_json):
+    """Print summaries as they arrive, so a long run keeps nothing in memory.
+
+    Each one is flushed, so redirected output survives an interrupted run.
+    """
     if as_json:
-        print(json.dumps(summaries, indent=2))
+        # Incremental equivalent of print(json.dumps(all_summaries, indent=2)).
+        separator = "[\n"
+        for summary in summaries:
+            body = textwrap.indent(json.dumps(summary, indent=2), "  ")
+            print(f"{separator}{body}", end="", flush=True)
+            separator = ",\n"
+        print("[]" if separator == "[\n" else "\n]", flush=True)
         return
 
     for summary in summaries:
         print(summary["path"])
         if summary.get("error"):
-            print(f"  {summary['error']}")
+            print(f"  {summary['error']}", flush=True)
             continue
         for prediction in summary["predictions"]:
             print(
                 "  "
                 f"{prediction['rank']}. "
                 f"{prediction['class_name']} "
-                f"({prediction['confidence']:.4f})"
+                f"({prediction['confidence']:.4f})",
+                flush=True,
             )
 
 
@@ -110,8 +122,10 @@ def predict_model(
     if device:
         predict_kwargs["device"] = device
 
-    results = model.predict(**predict_kwargs)
-    summaries = [summarize_result(result, top_k) for result in results]
+    # Stream: each Results holds its full-resolution image, so collecting them
+    # into a list exhausts RAM on folders of more than a few hundred photos.
+    results = model.predict(stream=True, **predict_kwargs)
+    summaries = (summarize_result(result, top_k) for result in results)
     print_summary(summaries, as_json)
     return 0
 
