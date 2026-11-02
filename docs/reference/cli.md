@@ -66,7 +66,7 @@ Output format, plain text: one block per image, with the image path followed by 
 
 Results are printed as each image is processed, and memory use does not grow with the number of images, so large folders can be processed in one run. Redirect the output to keep it, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
 
-`predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems (non-image files are skipped). To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
+`predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems. Unsupported file types are skipped, but matching videos are processed frame by frame; use an image-only source if the tree also contains videos. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
 
 ## eval
 
