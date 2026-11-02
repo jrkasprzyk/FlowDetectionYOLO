@@ -1,5 +1,7 @@
 import argparse
 import json
+import logging
+import sys
 import textwrap
 from pathlib import Path
 
@@ -82,6 +84,44 @@ def print_summary(summaries, as_json):
             )
 
 
+def send_ultralytics_logs_to_stderr():
+    """Keep stdout to results only, so redirected output stays parseable."""
+    for handler in logging.getLogger("ultralytics").handlers:
+        if isinstance(handler, logging.StreamHandler) and handler.stream is sys.stdout:
+            handler.setStream(sys.stderr)
+
+
+def warn_on_overwrites(results):
+    """Pass results through, warning when a saved image replaces an earlier one.
+
+    Ultralytics saves each image as <run directory>/<input stem>.jpg, so inputs
+    are compared by stem. Frames of one video share a path and do not count.
+    """
+    last_path_for_stem = {}
+    overwrites = 0
+    for result in results:
+        path = result.path
+        stem = Path(path).stem
+        earlier_path = last_path_for_stem.get(stem)
+        if earlier_path is not None and earlier_path != path:
+            overwrites += 1
+            print(
+                f"Warning: saved output for {path} overwrote the one for "
+                f"{earlier_path}; both are named {stem}.",
+                file=sys.stderr,
+                flush=True,
+            )
+        last_path_for_stem[stem] = path
+        yield result
+    if overwrites:
+        print(
+            f"Warning: {overwrites} saved output(s) were overwritten because "
+            "inputs share a filename.",
+            file=sys.stderr,
+            flush=True,
+        )
+
+
 def predict_model(
     weights,
     source,
@@ -102,6 +142,8 @@ def predict_model(
             "ultralytics is not installed. Run 'poetry install' before prediction."
         )
         return 1
+
+    send_ultralytics_logs_to_stderr()
 
     model = YOLO(weights)
     predict_kwargs = {
@@ -125,6 +167,8 @@ def predict_model(
     # Stream: each Results holds its full-resolution image, so collecting them
     # into a list exhausts RAM on folders of more than a few hundred photos.
     results = model.predict(stream=True, **predict_kwargs)
+    if save:
+        results = warn_on_overwrites(results)
     summaries = (summarize_result(result, top_k) for result in results)
     print_summary(summaries, as_json)
     return 0
