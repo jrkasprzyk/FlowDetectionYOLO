@@ -37,7 +37,7 @@ Trains a YOLO classification model. Settings precedence: command line flags, the
 | `--device` | string | auto | Compute device: a GPU index such as `0`, `cpu`, or `mps`. Automatic selection prefers CUDA and never selects MPS. |
 | `--epochs` | int | from cfg | Number of training epochs. |
 | `--imgsz` | int | from cfg | Training image size (square). |
-| `--project` | path | from cfg | Parent directory for run outputs. Resolved to an absolute path against the working directory; without this resolution, ultralytics would place relative paths under its global `runs_dir` setting. |
+| `--project` | path | from cfg | Parent directory for run outputs. Resolved to an absolute path against the working directory. |
 | `--name` | string | auto-numbered | Run name. Outputs are written to `<project>/<name>`. |
 | `--batch` | int | from cfg | Images per gradient step. `-1` or a float in (0, 1] enables automatic batch sizing. |
 | `--workers` | int | from cfg | Dataloader worker processes. On Windows each worker is a separate Python process; large values can exhaust memory and surface as a CUDA out-of-memory error. |
@@ -55,18 +55,29 @@ Runs classification inference with a trained checkpoint and prints the top class
 | `--imgsz` | int | `640` | Inference image size. |
 | `--device` | string | auto | Compute device, as for `train`. |
 | `--top-k` | int, 1 to 5 | `3` | Number of top classes printed per image. |
-| `--save` | boolean flag | off | Save annotated prediction images under the run directory. |
-| `--project` | path | `runs` when `--save` is passed | Parent directory for saved outputs. Resolved to an absolute path against the working directory. |
-| `--name` | string | ultralytics default | Run name for saved outputs. |
-| `--exist-ok` | boolean flag | off | Reuse an existing output run directory instead of creating a numbered one. |
+| `--save` | boolean flag | off | Also write annotated images to a run directory. Without this flag, `predict` writes no files. See [Saving annotated images](#saving-annotated-images). |
+| `--project` | path | `runs` | Parent directory of the run directory. Resolved to an absolute path against the working directory. Has no effect without `--save`. |
+| `--name` | string | `predict` | Name of the run directory. Has no effect without `--save`. |
+| `--exist-ok` | boolean flag | off | Reuse an existing run directory instead of creating a numbered one, overwriting files of the same name. Has no effect without `--save`. |
 | `--verbose` | boolean flag | off | Print ultralytics per-image progress output. |
 | `--json` | boolean flag | off | Print results as JSON instead of plain text. |
 
 Output format, plain text: one block per image, with the image path followed by one line per predicted class, giving rank, class name, and confidence to four decimal places. Output format, JSON: a list of objects, each with `path` and `predictions`; each prediction has `rank`, `class_index`, `class_name`, and `confidence`. Images for which the model returns no classification probabilities produce an `error` field instead of predictions.
 
-Results are printed as each image is processed, and memory use does not grow with the number of images, so large folders can be processed in one run. Redirect the output to keep it, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
+Results are printed to standard output as each image is processed. `predict` never writes these results to a file itself, with or without `--save`. Redirect the output to keep them, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
 
 `predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems. Unsupported file types are skipped, but matching videos are processed frame by frame; use an image-only source if the tree also contains videos. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
+
+### Saving annotated images
+
+Saving is off by default. Passing `--save` writes a copy of each input, with its top five classes and confidences drawn on it regardless of `--top-k`, to the run directory `<project>/<name>`, which is `runs/predict` unless `--project` or `--name` is passed. Images are saved as `.jpg` whatever their input format, and each video is saved as one annotated video. When the run finishes, `predict` prints `Results saved to <directory>`.
+
+If the run directory already exists, a new numbered one such as `runs/predict-2` is created, unless `--exist-ok` is passed.
+
+Two limitations apply:
+
+- Saved files are named after the input file and placed directly in the run directory, so inputs with the same filename overwrite each other. This can happen with a recursive glob over several folders, and no warning is printed.
+- The `Results saved to` line goes to standard output, in the middle of the JSON when `--json` is also passed, so a redirected file does not parse. To get both annotated images and a JSON file, run `predict` twice: once with `--save` and once with `--json`.
 
 ## eval
 
