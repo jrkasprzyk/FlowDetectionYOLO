@@ -90066,4 +90066,3224 @@
         "confidence": 7.541731065430213e-06
       }
     ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1435_H-Flume_PICT1989.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999973773956299
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.7733041204337496e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 8.823900543575292e-07
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1440_H-Flume_PICT1990.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999932050704956
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.5338025554665364e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.1623135328118224e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1445_H-Flume_PICT1991.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999905824661255
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.083841188024962e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.275576429790817e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1450_H-Flume_PICT1992.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999959468841553
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.64133495875285e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.4311210634332383e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1455_H-Flume_PICT1993.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999955892562866
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.2206909306987654e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.140145625162404e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1500_H-Flume_PICT1994.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999881982803345
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.9720958890684415e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.842033376917243e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1505_H-Flume_PICT1995.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999860525131226
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.186651600932237e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.82153267916874e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1510_H-Flume_PICT1996.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999873638153076
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.862780537630897e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.77827995584812e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1515_H-Flume_PICT1997.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999929666519165
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.3233626456640195e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.7607422907749424e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1520_H-Flume_PICT1998.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999773502349854
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.540189259685576e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.297847332665697e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1525_H-Flume_PICT1999.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999947547912598
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.8458002816478256e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.39905216403713e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1530_H-Flume_PICT2000.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999727010726929
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.0353840227471665e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.876686711621005e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1535_H-Flume_PICT2001.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999926090240479
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 4.270035333320266e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.066613999180845e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1540_H-Flume_PICT2002.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999370574951172
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.2731280447915196e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.0200532415183261e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1545_H-Flume_PICT2003.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999938011169434
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.129243395960657e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.0936037092033075e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1550_H-Flume_PICT2004.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999808073043823
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.5842799257370643e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.3695800993882585e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1555_H-Flume_PICT2005.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.99997878074646
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.4099558939051349e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.127932349249022e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1600_H-Flume_PICT2006.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.999982476234436
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 9.657363079895731e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.809449925844092e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1605_H-Flume_PICT2007.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999728202819824
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.9330414943397045e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.854741852497682e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1610_H-Flume_PICT2008.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9992177486419678
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.0006694718031212687
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.00011274895223323256
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1615_H-Flume_PICT2009.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9998509883880615
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.00012299689115025103
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.6029987566289492e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1620_H-Flume_PICT2010.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9998781681060791
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.00010264673619531095
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.9247961972723715e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1625_H-Flume_PICT2011.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9998846054077148
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 9.625015809433535e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.9166443962603807e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1630_H-Flume_PICT2012.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.999893307685852
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 8.344196248799562e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.3264214178198017e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1635_H-Flume_PICT2013.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999871253967285
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.828790901636239e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.134624527476262e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1640_H-Flume_PICT2014.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999924898147583
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.938090685551288e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.5956404644821305e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1645_H-Flume_PICT2015.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999730587005615
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.676957617746666e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.009121388051426e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1650_H-Flume_PICT2016.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999563694000244
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.5707620554603636e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.896635906945448e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1655_H-Flume_PICT2017.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999644756317139
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.2687980163027532e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.2830536434194073e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1700_H-Flume_PICT2018.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999841451644897
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 9.063317520485725e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.738073807355249e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1705_H-Flume_PICT0001.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9886866807937622
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.008834265172481537
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0024791269097477198
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1710_H-Flume_PICT0002.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999818801879883
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.2435926691978239e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.715877250622725e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1715_H-Flume_PICT0003.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999938011169434
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.185098532616394e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.076897544611711e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1720_H-Flume_PICT0004.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999970197677612
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.7731327943693032e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.1886144193340442e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1725_H-Flume_PICT0005.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999910593032837
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 4.675931450037751e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.314885700296145e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1730_H-Flume_PICT0006.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999858140945435
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.24558549336507e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.949151156732114e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1735_H-Flume_PICT0007.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999963045120239
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.2881517907080706e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.4004863260197453e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1740_H-Flume_PICT0008.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999880790710449
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.563295755768195e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.321671778801829e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1745_H-Flume_PICT0009.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999760389328003
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.4123407709121238e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 9.915446753439028e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1750_H-Flume_PICT0010.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999810457229614
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.0602932889014482e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 8.391066330659669e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1755_H-Flume_PICT0011.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999887943267822
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.891856289963471e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.3276121434464585e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1800_H-Flume_PICT0012.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999933242797852
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.663398047137889e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.99002977044438e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1805_H-Flume_PICT0013.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999914169311523
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.840207566303434e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.746505399249145e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1810_H-Flume_PICT0014.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999765157699585
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.2429967682692222e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.1078429452027194e-05
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1815_H-Flume_PICT0015.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.99998939037323
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.462216904561501e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.131581019668374e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1820_H-Flume_PICT0016.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999935626983643
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.6587900922313565e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.706135319385794e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1825_H-Flume_PICT0017.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999910593032837
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.9705540732247755e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.9756087062414736e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1830_H-Flume_PICT0018.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999923706054688
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 4.375687240099069e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.2536950129724573e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1835_H-Flume_PICT0019.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999874830245972
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 6.885306447657058e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.567506377701648e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1840_H-Flume_PICT0020.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999954700469971
+      },
+      {
+        "rank": 2,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 2.4347380076505942e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.151166654584813e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1845_H-Flume_PICT0021.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999855756759644
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 8.235863788286224e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.169900643726578e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1850_H-Flume_PICT0022.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999852180480957
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 8.022429938137066e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.849283636256587e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1855_H-Flume_PICT0023.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999927282333374
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 3.9554020077048335e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 3.3285182325926144e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1900_H-Flume_PICT0024.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999818801879883
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 1.116072598961182e-05
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 6.880174623802304e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1905_H-Flume_PICT0025.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999889135360718
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 5.83291330258362e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 5.248793513601413e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1910_H-Flume_PICT0026.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999836683273315
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 8.66034042701358e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 7.638205715920776e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1915_H-Flume_PICT0027.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.9999959468841553
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 2.1470523279276676e-06
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 1.9452777451078873e-06
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1920_H-Flume_PICT0028.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5150367617607117
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.45554450154304504
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.02941870130598545
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1925_H-Flume_PICT0029.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5417360663414001
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.40200626850128174
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.05625765398144722
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1930_H-Flume_PICT0030.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5109068751335144
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3984610140323639
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09063205868005753
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1935_H-Flume_PICT0031.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5735265612602234
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3326987326145172
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09377475827932358
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1940_H-Flume_PICT0032.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6017584204673767
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3333820700645447
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.064859539270401
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1945_H-Flume_PICT0033.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6542707085609436
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2668522000312805
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07887714356184006
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1950_H-Flume_PICT0034.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5236366391181946
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.36558768153190613
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11077562719583511
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_1955_H-Flume_PICT0035.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.488690048456192
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4115796387195587
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09973033517599106
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2000_H-Flume_PICT0036.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5390179753303528
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.31446823477745056
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.14651378989219666
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2005_H-Flume_PICT0037.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5472702383995056
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3623799681663513
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09034981578588486
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2010_H-Flume_PICT0038.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6962460875511169
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.23650866746902466
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.06724532693624496
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2015_H-Flume_PICT0039.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5905848741531372
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2877054810523987
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12170962244272232
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2020_H-Flume_PICT0040.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5891527533531189
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3053763508796692
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.10547096282243729
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2025_H-Flume_PICT0041.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.47323909401893616
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.404013991355896
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12274685502052307
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2030_H-Flume_PICT0042.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6376097202301025
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2636810541152954
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.098709337413311
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2035_H-Flume_PICT0043.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5093263387680054
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.36524102091789246
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.1254325956106186
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2040_H-Flume_PICT0044.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5331634283065796
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3758958876132965
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0909406989812851
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2045_H-Flume_PICT0045.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6097736358642578
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2749934196472168
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11523289233446121
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2050_H-Flume_PICT0046.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5617642998695374
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.337545782327652
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.10068992525339127
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2055_H-Flume_PICT0047.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6113049387931824
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3039470911026001
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08474802225828171
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2100_H-Flume_PICT0048.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5967328548431396
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.32740893959999084
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07585818320512772
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2105_H-Flume_PICT0049.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5375130772590637
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3712303936481476
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09125656634569168
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2110_H-Flume_PICT0050.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.518011212348938
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3996955454349518
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08229324966669083
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2115_H-Flume_PICT0051.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5495761632919312
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.3834019601345062
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.06702188402414322
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2120_H-Flume_PICT0052.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6156533360481262
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.29220864176750183
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09213801473379135
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2125_H-Flume_PICT0053.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5495925545692444
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.35133033990859985
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09907709807157516
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2130_H-Flume_PICT0054.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.460930198431015
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.41538700461387634
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12368278950452805
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2135_H-Flume_PICT0055.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5006935596466064
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.41089993715286255
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08840645104646683
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2140_H-Flume_PICT0056.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.49041521549224854
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.44211551547050476
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0674692913889885
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2145_H-Flume_PICT0057.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5104854702949524
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.41711339354515076
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07240106910467148
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2150_H-Flume_PICT0058.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.508979082107544
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3979729413986206
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09304802119731903
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2155_H-Flume_PICT0059.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4601040184497833
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4597569704055786
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08013904839754105
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2200_H-Flume_PICT0060.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5411655902862549
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3597753643989563
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09905899316072464
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2205_H-Flume_PICT0061.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5827155709266663
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3292290270328522
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0880553349852562
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2210_H-Flume_PICT0062.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5191192030906677
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4171193242073059
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.06376148760318756
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2215_H-Flume_PICT0063.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5932754874229431
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2596500813961029
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.14707444608211517
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2220_H-Flume_PICT0064.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5996540784835815
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3245994448661804
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07574652135372162
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2225_H-Flume_PICT0065.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5979536771774292
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.29446470737457275
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.10758161544799805
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2230_H-Flume_PICT0066.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.45635339617729187
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.42634323239326477
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11730335652828217
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2235_H-Flume_PICT0067.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4843268096446991
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4015538692474365
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.1141192838549614
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2240_H-Flume_PICT0068.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.6389017701148987
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.3296261429786682
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0314721018075943
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2245_H-Flume_PICT0069.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.556294858455658
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3891967236995697
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.05450837314128876
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2250_H-Flume_PICT0070.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5051360130310059
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3956303894519806
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09923357516527176
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2255_H-Flume_PICT0071.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.47964584827423096
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.43561646342277527
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08473774045705795
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2300_H-Flume_PICT0072.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5419758558273315
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3951171636581421
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.06290700286626816
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2305_H-Flume_PICT0073.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5536503791809082
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2981855273246765
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.14816410839557648
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2310_H-Flume_PICT0074.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6061143279075623
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.32553765177726746
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.06834805011749268
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2315_H-Flume_PICT0075.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6293257474899292
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3158690631389618
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0548052042722702
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2320_H-Flume_PICT0076.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.6441836357116699
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.2657393217086792
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09007705003023148
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2325_H-Flume_PICT0077.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4934086501598358
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.44461479783058167
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.061976563185453415
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2330_H-Flume_PICT0078.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5183523297309875
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.37231603264808655
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.1093316301703453
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2335_H-Flume_PICT0079.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.47285428643226624
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.44827407598495483
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07887160778045654
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2340_H-Flume_PICT0080.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5127990245819092
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.39812132716178894
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08907965570688248
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2345_H-Flume_PICT0081.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5129969120025635
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.39565908908843994
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.091343954205513
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2350_H-Flume_PICT0082.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5000127553939819
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.39227449893951416
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.10771273821592331
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_14_2355_H-Flume_PICT0083.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5582294464111328
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3545275628566742
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08724293112754822
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0000_H-Flume_PICT0084.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4771144986152649
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.43509751558303833
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08778800815343857
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0005_H-Flume_PICT0085.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.46153590083122253
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4259292781352997
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11253476142883301
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0010_H-Flume_PICT0086.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.46290233731269836
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.45642799139022827
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.08066962659358978
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0015_H-Flume_PICT0087.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4718191623687744
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4085070788860321
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11967375874519348
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0020_H-Flume_PICT0088.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.563782274723053
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.31410855054855347
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12210913002490997
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0025_H-Flume_PICT0089.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.46926844120025635
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.37058359384536743
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.16014792025089264
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0030_H-Flume_PICT0090.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5037550926208496
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3690063953399658
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12723854184150696
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0035_H-Flume_PICT0091.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.46086132526397705
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3974809944629669
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.14165762066841125
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0040_H-Flume_PICT0092.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4739747941493988
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3942427933216095
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.13178235292434692
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0045_H-Flume_PICT0093.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.49153435230255127
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.3877538740634918
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12071177363395691
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0050_H-Flume_PICT0094.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5307256579399109
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.37360963225364685
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09566470235586166
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0055_H-Flume_PICT0095.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4504978060722351
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.44686707854270935
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.10263516753911972
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0100_H-Flume_PICT0096.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4598371088504791
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.3928823471069336
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.14728043973445892
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0105_H-Flume_PICT0097.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4440159201622009
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4439488351345062
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11203531175851822
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0110_H-Flume_PICT0098.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.47248828411102295
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4339863657951355
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09352539479732513
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0115_H-Flume_PICT0099.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.46466338634490967
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.42606040835380554
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.1092761904001236
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0120_H-Flume_PICT0100.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4871676564216614
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.37828558683395386
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.13454675674438477
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0125_H-Flume_PICT0101.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4870210886001587
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.39117857813835144
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.12180037051439285
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0130_H-Flume_PICT0102.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.44526275992393494
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4367859959602356
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.11795122176408768
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0135_H-Flume_PICT0103.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.49759867787361145
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.43190833926200867
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07049300521612167
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0140_H-Flume_PICT0104.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5806062817573547
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.32361385226249695
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0957798883318901
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0145_H-Flume_PICT0105.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.47901174426078796
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4682580232620239
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.05273023992776871
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0150_H-Flume_PICT0106.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5376139283180237
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.3827436864376068
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.0796423852443695
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0155_H-Flume_PICT0107.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.5133466124534607
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4269030690193176
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.05975034087896347
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0200_H-Flume_PICT0108.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5213429927825928
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4073212444782257
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.07133574783802032
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0205_H-Flume_PICT0109.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.4723048806190491
+      },
+      {
+        "rank": 2,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.4309103786945343
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09678469598293304
+      }
+    ]
+  },
+  {
+    "path": "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09/2025_09_15_0210_H-Flume_PICT0110.JPG",
+    "predictions": [
+      {
+        "rank": 1,
+        "class_index": 0,
+        "class_name": "flow",
+        "confidence": 0.5880612730979919
+      },
+      {
+        "rank": 2,
+        "class_index": 1,
+        "class_name": "noflow",
+        "confidence": 0.32168111205101013
+      },
+      {
+        "rank": 3,
+        "class_index": 2,
+        "class_name": "obstructed",
+        "confidence": 0.09025762230157852
+      }
+    ]
   }
