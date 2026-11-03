@@ -64,20 +64,24 @@ Runs classification inference with a trained checkpoint and prints the top class
 
 Output format, plain text: one block per image, with the image path followed by one line per predicted class, giving rank, class name, and confidence to four decimal places. Output format, JSON: a list of objects, each with `path` and `predictions`; each prediction has `rank`, `class_index`, `class_name`, and `confidence`. Images for which the model returns no classification probabilities produce an `error` field instead of predictions.
 
-Results are printed to standard output as each image is processed. `predict` never writes these results to a file itself, with or without `--save`. Redirect the output to keep them, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
+Results are printed to standard output as each image is processed; log messages and warnings go to standard error. `predict` never writes these results to a file itself, with or without `--save`. Redirect standard output to keep them, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
 
 `predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems. Unsupported file types are skipped, but matching videos are processed frame by frame; use an image-only source if the tree also contains videos. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
 
 ### Saving annotated images
 
-Saving is off by default. Passing `--save` writes a copy of each input, with its top five classes and confidences drawn on it regardless of `--top-k`, to the run directory `<project>/<name>`, which is `runs/predict` unless `--project` or `--name` is passed. Images are saved as `.jpg` whatever their input format, and each video is saved as one annotated video. When the run finishes, `predict` prints `Results saved to <directory>`.
+Saving is off by default. Passing `--save` writes a copy of each input, with its top five classes and confidences drawn on it regardless of `--top-k`, to the run directory `<project>/<name>`, which is `runs/predict` unless `--project` or `--name` is passed. Images are saved as `.jpg` whatever their input format, and each video is saved as one annotated video. When the run finishes, `predict` logs `Results saved to <directory>`.
 
 If the run directory already exists, a new numbered one such as `runs/predict-2` is created, unless `--exist-ok` is passed.
 
-Two limitations apply:
+Saved files are named after the input file, ignoring its extension, and placed directly in the run directory, so inputs with the same name collide. This can happen with a recursive glob over several folders. Names that differ only in case count as the same on Windows and macOS.
 
-- Saved files are named after the input file and placed directly in the run directory, so inputs with the same filename overwrite each other. This can happen with a recursive glob over several folders, and no warning is printed.
-- The `Results saved to` line goes to standard output, in the middle of the JSON when `--json` is also passed, so a redirected file does not parse. To get both annotated images and a JSON file, run `predict` twice: once with `--save` and once with `--json`.
+- Images with the same name overwrite each other, with the later input replacing the earlier one.
+- Videos with the same name and extension are joined into one saved video.
+- Videos with the same name and different extensions overwrite each other.
+- An image and a video with the same name do not collide, because they are saved with different extensions.
+
+`predict` prints a warning for each collision between inputs and a total at the end of the run, and the run still exits with status 0. The printed results are not affected, and they still include every input.
 
 ## eval
 
