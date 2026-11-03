@@ -1,0 +1,21 @@
+November 3rd, 2026 - Marguerite
+Practice FlowDetectionYOLO model training and prediction runs.
+
+1. I manually sorted images from the HFlume camera from April through October 2025 into 3 folders 
+labelled as Flow (>3,100 photos), No Flow (>3,100 photos), and Obstructed (310 photos).
+
+2. I split the data set using the split command:
+    poetry run split --source /Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/flow_detection_labeled_2025_Marguerite_HFlume
+
+And the output was:
+    Split dataset written to /Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/flow_detection_labeled_2025_Marguerite_HFlume_split (train: 5267, val: 688, test: 638)
+
+3. I trained a model instance on these labelled images using the train command:
+    poetry run train --epochs 5 --device mps --data /Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/flow_detection_labeled_2025_Marguerite_HFlume_split
+
+The outputs of this model training are saved under the >train-5 folder in this >saved_runs/marguerite folder.
+
+4. Now I want to use this trained model to predict on some sample images. 
+Particularly, I want to predict on 8,640 photos from September 2025 
+(one folder containing all the months 5-min-lapse photos)
+
