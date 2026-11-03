@@ -74,7 +74,14 @@ Saving is off by default. Passing `--save` writes a copy of each input, with its
 
 If the run directory already exists, a new numbered one such as `runs/predict-2` is created, unless `--exist-ok` is passed.
 
-Saved files are named after the input file, ignoring its extension, and placed directly in the run directory, so inputs with the same name overwrite each other, with the later input replacing the earlier one. This can happen with a recursive glob over several folders. `predict` prints a warning for each overwrite and a total at the end of the run, and the run still exits with status 0. The printed results are not affected, and they still include every input.
+Saved files are named after the input file, ignoring its extension, and placed directly in the run directory, so inputs with the same name collide. This can happen with a recursive glob over several folders. Names that differ only in case count as the same on Windows and macOS.
+
+- Images with the same name overwrite each other, with the later input replacing the earlier one.
+- Videos with the same name and extension are joined into one saved video.
+- Videos with the same name and different extensions overwrite each other.
+- An image and a video with the same name do not collide, because they are saved with different extensions.
+
+`predict` prints a warning for each collision between inputs and a total at the end of the run, and the run still exits with status 0. The printed results are not affected, and they still include every input.
 
 ## eval
 
