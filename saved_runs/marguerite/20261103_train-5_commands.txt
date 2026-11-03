@@ -19,3 +19,11 @@ The outputs of this model training are saved under the >train-5 folder in this >
 Particularly, I want to predict on 8,640 photos from September 2025 
 (one folder containing all the months 5-min-lapse photos)
 
+I use the predict command:
+    poetry run predict \
+    --model runs/train-5/weights/best.pt \
+    --source "/Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/HFlume_2025_09" \
+    --json > 2025-09.json
+
+This outputs the classifications for each image in json format (also included in this folder).
+
