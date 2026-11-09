@@ -27,3 +27,11 @@ I use the predict command:
 
 This outputs the classifications for each image in json format (also included in this folder).
 
+5. Running the eval command on the trained model:
+    poetry run eval \
+    --model runs/train-5/weights/best.pt \
+    --name "20261109_model5" \
+    --data /Users/malo1039/Library/CloudStorage/OneDrive-UCB-O365/Datasets/flow_detection_labeled_2025_Marguerite_HFlume_split \
+    --split test
+
+The eval run output is also saved in this folder under >20261109_model5.
