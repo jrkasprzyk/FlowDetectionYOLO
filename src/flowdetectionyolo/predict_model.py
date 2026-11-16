@@ -66,7 +66,9 @@ def _date_from_filename(path):
     if len(filename) < 16 or filename[15] != "_":
         return ""
     try:
-        return datetime.strptime(timestamp, "%Y_%m_%d_%H%M").isoformat(sep=" ")
+        return datetime.strptime(timestamp, "%Y_%m_%d_%H%M").strftime(
+            "%Y-%m-%d %H:%M"
+        )
     except ValueError:
         return ""
 

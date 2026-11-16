@@ -1,4 +1,6 @@
+import csv
 import io
+import json
 import logging
 import sys
 from types import SimpleNamespace
@@ -6,6 +8,9 @@ from types import SimpleNamespace
 import pytest
 
 from flowdetectionyolo.predict_model import (
+    _date_from_filename,
+    build_parser,
+    print_summary,
     send_ultralytics_logs_to_stderr,
     use_utf8_stdout_on_windows,
     warn_on_collisions,
@@ -14,6 +19,69 @@ from flowdetectionyolo.predict_model import (
 
 def results_for(*paths):
     return [SimpleNamespace(path=path) for path in paths]
+
+
+def test_date_from_filename_parses_timestamp_prefix():
+    assert (
+        _date_from_filename("photos/2024_01_02_0304_CameraA_image.JPG")
+        == "2024-01-02 03:04"
+    )
+
+
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "photos/image.JPG",
+        "photos/2024_13_02_0304_CameraA_image.JPG",
+        "photos/2024_01_02_0304image.JPG",
+    ],
+)
+def test_date_from_filename_returns_empty_for_invalid_prefix(filename):
+    assert _date_from_filename(filename) == ""
+
+
+def test_csv_output_has_one_row_per_image_and_preserves_json_fields(capsys):
+    csv_file = io.StringIO(newline="")
+    writer = csv.DictWriter(
+        csv_file, fieldnames=("path", "date", "predictions", "error")
+    )
+    writer.writeheader()
+    summaries = [
+        {
+            "path": "photos/2024_01_02_0304_CameraA_image.JPG",
+            "predictions": [
+                {
+                    "rank": 1,
+                    "class_index": 7,
+                    "class_name": "flow, fast",
+                    "confidence": 0.875,
+                }
+            ],
+        },
+        {
+            "path": "photos/not_a_timestamp.JPG",
+            "predictions": [],
+            "error": "No classification probabilities were returned.",
+        },
+    ]
+
+    print_summary(iter(summaries), as_json=False, csv_writer=writer)
+
+    rows = list(csv.DictReader(io.StringIO(csv_file.getvalue(), newline="")))
+    assert len(rows) == 2
+    assert rows[0]["path"] == summaries[0]["path"]
+    assert rows[0]["date"] == "2024-01-02 03:04"
+    assert json.loads(rows[0]["predictions"]) == summaries[0]["predictions"]
+    assert rows[0]["error"] == ""
+    assert rows[1]["date"] == ""
+    assert json.loads(rows[1]["predictions"]) == []
+    assert rows[1]["error"] == summaries[1]["error"]
+    assert capsys.readouterr().out
+
+
+def test_parser_accepts_csv_output_path():
+    args = build_parser().parse_args(["--model", "model.pt", "--csv", "results.csv"])
+    assert args.csv == "results.csv"
 
 
 def run_warnings(capsys, *paths):
