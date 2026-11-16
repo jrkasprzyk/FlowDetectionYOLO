@@ -1,10 +1,15 @@
 import argparse
 import contextlib
+import csv
 import json
 import logging
 import sys
 import textwrap
+from datetime import datetime
 from pathlib import Path
+
+
+CSV_FIELDS = ("path", "date", "predictions", "error")
 
 
 def _as_float(value):
@@ -55,11 +60,42 @@ def summarize_result(result, top_k):
     return {"path": path, "predictions": predictions}
 
 
-def print_summary(summaries, as_json):
+def _date_from_filename(path):
+    filename = Path(path).name
+    timestamp = filename[:15]
+    if len(filename) < 16 or filename[15] != "_":
+        return ""
+    try:
+        return datetime.strptime(timestamp, "%Y_%m_%d_%H%M").isoformat(sep=" ")
+    except ValueError:
+        return ""
+
+
+def print_summary(summaries, as_json, csv_writer=None):
     """Print summaries as they arrive, so a long run keeps nothing in memory.
 
     Each one is flushed, so redirected output survives an interrupted run.
     """
+    if csv_writer is not None:
+        # The predictions cell retains the complete nested JSON data for each image.
+        original_summaries = summaries
+
+        def csv_summaries():
+            for summary in original_summaries:
+                csv_writer.writerow(
+                    {
+                        "path": summary["path"],
+                        "date": _date_from_filename(summary["path"]),
+                        "predictions": json.dumps(
+                            summary.get("predictions", []), ensure_ascii=False
+                        ),
+                        "error": summary.get("error", ""),
+                    }
+                )
+                yield summary
+
+        summaries = csv_summaries()
+
     if as_json:
         # Incremental equivalent of print(json.dumps(all_summaries, indent=2)).
         separator = "[\n"
@@ -156,6 +192,7 @@ def predict_model(
     verbose,
     as_json,
     device=None,
+    csv_path=None,
 ):
     use_utf8_stdout_on_windows()
     try:
@@ -196,7 +233,13 @@ def predict_model(
     if save:
         results = warn_on_collisions(results)
     summaries = (summarize_result(result, top_k) for result in results)
-    print_summary(summaries, as_json)
+    if csv_path:
+        with open(csv_path, "w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=CSV_FIELDS)
+            writer.writeheader()
+            print_summary(summaries, as_json, writer)
+    else:
+        print_summary(summaries, as_json)
     return 0
 
 
@@ -255,6 +298,11 @@ def build_parser():
     parser.add_argument(
         "--json", action="store_true", help="Print prediction summaries as JSON."
     )
+    parser.add_argument(
+        "--csv",
+        metavar="PATH",
+        help="Also write prediction summaries to a CSV file.",
+    )
     return parser
 
 
@@ -272,6 +320,7 @@ def main():
         args.verbose,
         args.json,
         device=args.device,
+        csv_path=args.csv,
     )
 
 
