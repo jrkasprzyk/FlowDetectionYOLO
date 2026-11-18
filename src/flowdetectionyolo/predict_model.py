@@ -9,9 +9,6 @@ from datetime import datetime
 from pathlib import Path
 
 
-CSV_FIELDS = ("path", "date", "predictions", "error")
-
-
 def _as_float(value):
     if hasattr(value, "item"):
         return float(value.item())
@@ -26,7 +23,7 @@ def _class_name(names, class_index):
     return str(class_index)
 
 
-def summarize_result(result, top_k):
+def summarize_result(result, top_k, include_class_confidences=False):
     probs = getattr(result, "probs", None)
     path = getattr(result, "path", "")
 
@@ -57,7 +54,21 @@ def summarize_result(result, top_k):
             }
         )
 
-    return {"path": path, "predictions": predictions}
+    summary = {"path": path, "predictions": predictions}
+    if include_class_confidences:
+        data = getattr(probs, "data", None)
+        if data is None:
+            data = []
+        if hasattr(data, "detach"):
+            data = data.detach()
+        if hasattr(data, "cpu"):
+            data = data.cpu()
+        if hasattr(data, "tolist"):
+            data = data.tolist()
+        summary["_class_confidences"] = {
+            index: _as_float(confidence) for index, confidence in enumerate(data)
+        }
+    return summary
 
 
 def _date_from_filename(path):
@@ -73,27 +84,46 @@ def _date_from_filename(path):
         return ""
 
 
-def print_summary(summaries, as_json, csv_writer=None):
+def _class_names(names):
+    if isinstance(names, dict):
+        return sorted((int(index), name) for index, name in names.items())
+    return list(enumerate(names or []))
+
+
+def print_summary(summaries, as_json, csv_writer=None, class_names=()):
     """Print summaries as they arrive, so a long run keeps nothing in memory.
 
     Each one is flushed, so redirected output survives an interrupted run.
     """
     if csv_writer is not None:
-        # The predictions cell retains the complete nested JSON data for each image.
         original_summaries = summaries
 
         def csv_summaries():
             for summary in original_summaries:
-                csv_writer.writerow(
+                confidences = summary.pop("_class_confidences", {})
+                if confidences:
+                    predicted_index = max(confidences, key=confidences.get)
+                    predicted_class = dict(class_names).get(
+                        predicted_index, str(predicted_index)
+                    )
+                else:
+                    predicted_class = (
+                        summary["predictions"][0]["class_name"]
+                        if summary.get("predictions")
+                        else ""
+                    )
+                row = {
+                    "path": summary["path"],
+                    "date": _date_from_filename(summary["path"]),
+                    "predicted class": predicted_class,
+                }
+                row.update(
                     {
-                        "path": summary["path"],
-                        "date": _date_from_filename(summary["path"]),
-                        "predictions": json.dumps(
-                            summary.get("predictions", []), ensure_ascii=False
-                        ),
-                        "error": summary.get("error", ""),
+                        f"{index}: {name}": confidences.get(index, "")
+                        for index, name in class_names
                     }
                 )
+                csv_writer.writerow(row)
                 yield summary
 
         summaries = csv_summaries()
@@ -234,12 +264,22 @@ def predict_model(
     results = model.predict(stream=True, **predict_kwargs)
     if save:
         results = warn_on_collisions(results)
-    summaries = (summarize_result(result, top_k) for result in results)
+    class_names = _class_names(model.names)
+    summaries = (
+        summarize_result(result, top_k, include_class_confidences=bool(csv_path))
+        for result in results
+    )
     if csv_path:
+        fieldnames = [
+            "path",
+            "date",
+            *(f"{index}: {name}" for index, name in class_names),
+            "predicted class",
+        ]
         with open(csv_path, "w", newline="", encoding="utf-8") as csv_file:
-            writer = csv.DictWriter(csv_file, fieldnames=CSV_FIELDS)
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
             writer.writeheader()
-            print_summary(summaries, as_json, writer)
+            print_summary(summaries, as_json, writer, class_names)
     else:
         print_summary(summaries, as_json)
     return 0
