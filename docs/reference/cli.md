@@ -61,10 +61,13 @@ Runs classification inference with a trained checkpoint and prints the top class
 | `--exist-ok` | boolean flag | off | Reuse an existing run directory instead of creating a numbered one, overwriting files of the same name. Has no effect without `--save`. |
 | `--verbose` | boolean flag | off | Print ultralytics per-image progress output. |
 | `--json` | boolean flag | off | Print results as JSON instead of plain text. |
+| `--csv` | path | (off) | Also write one row per result to a CSV file. |
 
 Output format, plain text: one block per image, with the image path followed by one line per predicted class, giving rank, class name, and confidence to four decimal places. Output format, JSON: a list of objects, each with `path` and `predictions`; each prediction has `rank`, `class_index`, `class_name`, and `confidence`. Images for which the model returns no classification probabilities produce an `error` field instead of predictions.
 
-Results are printed to standard output as each image is processed; log messages and warnings go to standard error. `predict` never writes these results to a file itself, with or without `--save`. Redirect standard output to keep them, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
+Passing `--csv PATH` also writes a CSV file with `path`, `date`, one confidence column per model class, and a final `predicted class` column. Each confidence column header contains the class index and name (for example, `0: flow`); confidence values cover all model classes regardless of `--top-k`. The `date` column is parsed from a filename beginning `YYYY_MM_DD_HHMM_` and formatted as `YYYY-MM-DD HH:MM`; it is blank when the prefix is missing or invalid. For example, `poetry run predict --model best.pt --source photos --csv predictions.csv` writes `predictions.csv`. CSV output can be combined with `--json` to write the CSV while also printing JSON to standard output.
+
+Results are printed to standard output as each image is processed; log messages and warnings go to standard error. Without `--csv`, `predict` never writes result data to a file itself, with or without `--save`. Redirect standard output to keep JSON results, for example `poetry run predict --model best.pt --source photos/2025-06 --json > 2025-06.json`.
 
 `predict` treats a directory source as a flat collection of images and does not descend into subdirectories. To process a tree of folders in one run, pass a quoted recursive glob such as `--source "photos/**/*.*"`; the quotes stop the shell from expanding it first, and `*.*` avoids missing `.JPG` files on case-sensitive systems. Unsupported file types are skipped, but matching videos are processed frame by frame; use an image-only source if the tree also contains videos. To score a labeled split laid out as `<split>/<class>/<image>`, use `eval`, which reads that structure directly and reports accuracy.
 

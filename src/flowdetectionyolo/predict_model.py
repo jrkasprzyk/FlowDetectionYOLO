@@ -1,9 +1,11 @@
 import argparse
 import contextlib
+import csv
 import json
 import logging
 import sys
 import textwrap
+from datetime import datetime
 from pathlib import Path
 
 
@@ -21,7 +23,7 @@ def _class_name(names, class_index):
     return str(class_index)
 
 
-def summarize_result(result, top_k):
+def summarize_result(result, top_k, include_class_confidences=False):
     probs = getattr(result, "probs", None)
     path = getattr(result, "path", "")
 
@@ -52,14 +54,80 @@ def summarize_result(result, top_k):
             }
         )
 
-    return {"path": path, "predictions": predictions}
+    summary = {"path": path, "predictions": predictions}
+    if include_class_confidences:
+        data = getattr(probs, "data", None)
+        if data is None:
+            data = []
+        if hasattr(data, "detach"):
+            data = data.detach()
+        if hasattr(data, "cpu"):
+            data = data.cpu()
+        if hasattr(data, "tolist"):
+            data = data.tolist()
+        summary["_class_confidences"] = {
+            index: _as_float(confidence) for index, confidence in enumerate(data)
+        }
+    return summary
 
 
-def print_summary(summaries, as_json):
+def _date_from_filename(path):
+    filename = Path(path).name
+    timestamp = filename[:15]
+    if len(filename) < 16 or filename[15] != "_":
+        return ""
+    try:
+        return datetime.strptime(timestamp, "%Y_%m_%d_%H%M").strftime(
+            "%Y-%m-%d %H:%M"
+        )
+    except ValueError:
+        return ""
+
+
+def _class_names(names):
+    if isinstance(names, dict):
+        return sorted((int(index), name) for index, name in names.items())
+    return list(enumerate(names or []))
+
+
+def print_summary(summaries, as_json, csv_writer=None, class_names=()):
     """Print summaries as they arrive, so a long run keeps nothing in memory.
 
     Each one is flushed, so redirected output survives an interrupted run.
     """
+    if csv_writer is not None:
+        original_summaries = summaries
+
+        def csv_summaries():
+            for summary in original_summaries:
+                confidences = summary.pop("_class_confidences", {})
+                if confidences:
+                    predicted_index = max(confidences, key=confidences.get)
+                    predicted_class = dict(class_names).get(
+                        predicted_index, str(predicted_index)
+                    )
+                else:
+                    predicted_class = (
+                        summary["predictions"][0]["class_name"]
+                        if summary.get("predictions")
+                        else ""
+                    )
+                row = {
+                    "path": summary["path"],
+                    "date": _date_from_filename(summary["path"]),
+                    "predicted class": predicted_class,
+                }
+                row.update(
+                    {
+                        f"{index}: {name}": confidences.get(index, "")
+                        for index, name in class_names
+                    }
+                )
+                csv_writer.writerow(row)
+                yield summary
+
+        summaries = csv_summaries()
+
     if as_json:
         # Incremental equivalent of print(json.dumps(all_summaries, indent=2)).
         separator = "[\n"
@@ -156,6 +224,7 @@ def predict_model(
     verbose,
     as_json,
     device=None,
+    csv_path=None,
 ):
     use_utf8_stdout_on_windows()
     try:
@@ -195,8 +264,24 @@ def predict_model(
     results = model.predict(stream=True, **predict_kwargs)
     if save:
         results = warn_on_collisions(results)
-    summaries = (summarize_result(result, top_k) for result in results)
-    print_summary(summaries, as_json)
+    class_names = _class_names(model.names)
+    summaries = (
+        summarize_result(result, top_k, include_class_confidences=bool(csv_path))
+        for result in results
+    )
+    if csv_path:
+        fieldnames = [
+            "path",
+            "date",
+            *(f"{index}: {name}" for index, name in class_names),
+            "predicted class",
+        ]
+        with open(csv_path, "w", newline="", encoding="utf-8") as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            print_summary(summaries, as_json, writer, class_names)
+    else:
+        print_summary(summaries, as_json)
     return 0
 
 
@@ -255,6 +340,11 @@ def build_parser():
     parser.add_argument(
         "--json", action="store_true", help="Print prediction summaries as JSON."
     )
+    parser.add_argument(
+        "--csv",
+        metavar="PATH",
+        help="Also write prediction summaries to a CSV file.",
+    )
     return parser
 
 
@@ -272,6 +362,7 @@ def main():
         args.verbose,
         args.json,
         device=args.device,
+        csv_path=args.csv,
     )
 
 
